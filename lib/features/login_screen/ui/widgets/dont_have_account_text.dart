@@ -1,4 +1,7 @@
+import 'package:diva_shopping_app/core/helpers/extentions.dart';
+import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AlreadyHaveAccountText extends StatelessWidget {
@@ -17,6 +20,10 @@ class AlreadyHaveAccountText extends StatelessWidget {
           TextSpan(
             text: ' Sign Up',
             style: AppTextStyles.font13RobotoPink,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                context.pushReplacementNamed(Routes.signInScreen);
+              },
           ),
         ],
       ),
