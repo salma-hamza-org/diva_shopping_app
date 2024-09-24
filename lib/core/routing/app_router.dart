@@ -7,11 +7,10 @@ import '../../features/signin_screen/ui/signin_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
-
     switch (settings.name) {
       case Routes.loginScreen:
         return MaterialPageRoute(
-          builder: (_) => const LoginScreen(),
+          builder: (_) => LoginScreen(),
         );
 
       case Routes.signInScreen:
