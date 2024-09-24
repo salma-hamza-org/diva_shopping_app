@@ -4,11 +4,16 @@ import 'package:flutter/material.dart';
 import '../../features/home_screen/ui/home_screen.dart';
 import '../../features/login_screen/ui/login_screen.dart';
 import '../../features/signin_screen/ui/signin_screen.dart';
+import '../../features/splash_screen/splash_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
 
     switch (settings.name) {
+      case Routes.splashScreen:
+        return MaterialPageRoute(
+          builder: (_) => const SplashScreen(),
+        );
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => const LoginScreen(),
