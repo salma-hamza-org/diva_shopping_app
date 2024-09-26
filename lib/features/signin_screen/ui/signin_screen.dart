@@ -13,7 +13,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
