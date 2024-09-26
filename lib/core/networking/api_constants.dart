@@ -2,6 +2,7 @@ class ApiConstants {
   static const String apiBaseUrl = "https://fakestoreapi.com/";
 
   static const String login = "auth/login";
+  static const String signup = "users";
 }
 
 class ApiErrors {

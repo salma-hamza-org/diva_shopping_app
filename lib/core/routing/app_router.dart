@@ -1,6 +1,7 @@
 import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
+import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,7 +22,10 @@ class AppRouter {
 
       case Routes.signInScreen:
         return MaterialPageRoute(
-          builder: (_) => const SignInScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<SignupCubit>(),
+            child: const SignInScreen(),
+          ),
         );
 
       case Routes.homeScreen:
