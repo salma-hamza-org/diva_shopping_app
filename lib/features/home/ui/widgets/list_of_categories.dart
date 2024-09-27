@@ -13,7 +13,7 @@ class ListOfCategories extends StatelessWidget{
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context,index) => ItemOfListOfCategories(index: index,),
-        itemCount: 4,
+        itemCount: 5,
       ),
     );
   }

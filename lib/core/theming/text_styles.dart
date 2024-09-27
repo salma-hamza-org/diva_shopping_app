@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles{
 
-  static TextStyle font10RobotoGrey=GoogleFonts.roboto(
-    fontSize: 10.sp,
+  static TextStyle font12RobotoGrey=GoogleFonts.roboto(
+    fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
   );

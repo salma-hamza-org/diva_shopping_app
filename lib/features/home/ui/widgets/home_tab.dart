@@ -1,3 +1,4 @@
+import 'package:diva_shopping_app/features/home/ui/widgets/grid_of_products.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/home_top_bar.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/list_of_categories.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/list_of_sales.dart';
@@ -23,7 +24,7 @@ class HomeTab extends StatelessWidget {
               SearchBarAndFilteration(),
               ListOfSales(),
               ListOfCategories(),
-
+              GridOfProducts(),
             ],
           ),
         ),

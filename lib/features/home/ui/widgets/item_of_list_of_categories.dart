@@ -11,6 +11,7 @@ class ItemOfListOfCategories extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     List<String> categoryNames = [
+      "All",
       "Electronics",
       "Jewelery",
       "Men's clothing",
