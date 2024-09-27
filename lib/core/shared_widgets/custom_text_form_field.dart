@@ -8,6 +8,7 @@ class CustomTextFormField extends StatelessWidget {
   TextStyle textStyle;
   //String Function(String?) validator;
   Icon? suffixIcon;
+  Icon? prefixIcon;
   //TextEditingController controller;
   bool isObscure;
 
@@ -17,6 +18,7 @@ class CustomTextFormField extends StatelessWidget {
       required this.textStyle,
       //required this.validator,
       this.suffixIcon,
+        this.prefixIcon,
       //required this.controller,
       this.isObscure=false});
 
@@ -30,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(vertical: 15.h,horizontal: 18.w),
           isDense: true,
           enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.grey,width: 2),
+          borderSide: const BorderSide(color: AppColors.grey,width: 1.5),
           borderRadius: BorderRadius.circular(25.r),
         ),
         focusedBorder: OutlineInputBorder(
@@ -46,6 +48,7 @@ class CustomTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(25.r),
         ),
         suffix: suffixIcon,
+        prefixIcon:prefixIcon ,
         hintText: hintText,
         hintStyle: textStyle,
       ),

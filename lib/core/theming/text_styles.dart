@@ -11,8 +11,8 @@ class AppTextStyles{
     color: AppColors.grey,
   );
 
-  static TextStyle font12RobotoPink=GoogleFonts.roboto(
-    fontSize: 12.sp,
+  static TextStyle font14RobotoPink=GoogleFonts.roboto(
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.pink,
   );
