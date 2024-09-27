@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/colors.dart';
 
-class ItemOfListOfCategories extends StatelessWidget{
+class ItemOfCategoriesList extends StatelessWidget{
   int index;
-  ItemOfListOfCategories({super.key,required this.index});
+  ItemOfCategoriesList({super.key,required this.index});
 
   @override
   Widget build(BuildContext context) {
