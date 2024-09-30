@@ -39,7 +39,7 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
   
 ## Installation
 
-To run the Chefaay app locally, follow these steps:
+To run the Diva app locally, follow these steps:
 
 1. Clone the repository:
 
