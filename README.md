@@ -4,7 +4,7 @@
 
 Diva is your go-to app for discovering stylish and trendy clothing, offering a seamless and secure shopping experience. Browse through a wide range of fashion collections for men, women, and kids, featuring top brands and exclusive designs. With detailed product views, personalized recommendations, and easy navigation, finding your next favorite outfit is effortless. Diva also provides secure payment options, making checkout quick and safe. Whether you're shopping for casual wear, formal attire, or accessories, Divr simplifies the process—from browsing to buying—all in one place.
 
-### 👩‍💻 Collaborated with a team of 2 on my mentorShip project to develop the Diva app. Together, we created a powerful shopping app that delivers a seamless and secure experience for users. **[@salmaHamza83934](https://github.com/salmaHamza83934)** and **[@ayaaslama](https://github.com/ayaaslama)**
+### 👩‍💻 Collaborated with a team of 3 on my mentorShip project to develop the Diva app. Together, we created a powerful shopping app that delivers a seamless and secure experience for users. **[@dinadendan](https://github.com/dinadendan)**, **[@salmaHamza83934](https://github.com/salmaHamza83934)** and **[@ayaaslama](https://github.com/ayaaslama)**
 
 ## Features
 
