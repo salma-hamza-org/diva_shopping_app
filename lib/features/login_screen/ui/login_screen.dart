@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                 verticalSpace(16),
                 const TermsAndConditionsText(),
                 verticalSpace(16),
-                const AlreadyHaveAccountText(),
+                const DontHaveAccountText(),
                 const LoginBlocListener(),
               ],
             ),
