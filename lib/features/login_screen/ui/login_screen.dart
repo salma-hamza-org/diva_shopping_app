@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 const LoginTextAndImage(),
                 verticalSpace(20),
-                const EmailAndPasswoed(),
+                const EmailAndPassword(),
                 verticalSpace(40),
                 AppTextButton(
                     buttonText: "Sign In",

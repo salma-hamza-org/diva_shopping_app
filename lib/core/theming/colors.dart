@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+
   static const Color pink = Color(0xFFFF1768);
   static const Color lightPink = Color(0xFFFEEBF7);
   static const Color grey = Color.fromRGBO(121, 121, 121, 1);

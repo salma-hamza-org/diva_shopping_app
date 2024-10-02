@@ -10,6 +10,7 @@ class AppTextStyles{
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
 
+  );
   static TextStyle font10RobotoGrey = GoogleFonts.roboto(
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,
