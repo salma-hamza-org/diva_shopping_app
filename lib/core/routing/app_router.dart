@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/home_screen/ui/home_screen.dart';
 import '../../features/login_screen/ui/login_screen.dart';
 import '../../features/signin_screen/ui/signin_screen.dart';
 import '../../features/splash_screen/splash_screen.dart';
