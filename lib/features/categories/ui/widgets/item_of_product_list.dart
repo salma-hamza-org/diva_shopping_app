@@ -16,11 +16,11 @@ class ItemOfProductList extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                height: 200,
+                height: 200.h,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(25.r)),
                 child: Image.asset(
-                  'assets/images/testImage.png',
+                  'assets/images/hijab_girl1.png',
                   fit: BoxFit.fill,
                   width: double.infinity,
                 ),
@@ -63,7 +63,7 @@ class ItemOfProductList extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'Baby blue blouse',
+                  'Mint green Jacket',
                   style: AppTextStyles.font14RobotoBlack,
                   overflow: TextOverflow.ellipsis,
                 ),

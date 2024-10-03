@@ -3,25 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppTextStyles{
-
-  static TextStyle font12RobotoGrey=GoogleFonts.roboto(
+class AppTextStyles {
+  static TextStyle font12RobotoGrey = GoogleFonts.roboto(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
-
+  );
   static TextStyle font10RobotoGrey = GoogleFonts.roboto(
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
   );
 
-  static TextStyle font14RobotoPink=GoogleFonts.roboto(
+  static TextStyle font14RobotoPink = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.pink,
   );
-    
+
   static TextStyle font12RobotoPink = GoogleFonts.roboto(
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
@@ -120,6 +119,12 @@ class AppTextStyles{
   static TextStyle font24LibreBaskervilleBlack = GoogleFonts.libreBaskerville(
     fontSize: 24.sp,
     fontWeight: FontWeight.w400,
+    color: Colors.black,
+  );
+
+  static TextStyle font24RobotoBlack = GoogleFonts.roboto(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w600,
     color: Colors.black,
   );
 }
