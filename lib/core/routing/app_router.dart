@@ -1,6 +1,7 @@
 import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/features/home/ui/home_page_layout.dart';
+import 'package:diva_shopping_app/features/product_details/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
@@ -37,6 +38,10 @@ class AppRouter {
           builder: (_) => const HomePageLayout(),
         );
 
+      case Routes.productDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ProductDetailsScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
