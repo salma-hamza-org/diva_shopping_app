@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:diva_shopping_app/core/networking/api_constants.dart';
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:diva_shopping_app/features/login_screen/data/models/login_request_body.dart';
 import 'package:diva_shopping_app/features/login_screen/data/models/login_response.dart';
 import 'package:diva_shopping_app/features/signin_screen/data/models/sign_up_request_body.dart';
@@ -21,4 +22,8 @@ abstract class ApiService {
   Future<SignupResponse> signup(
     @Body() SignupRequestBody signupRequestBody,
   );
+
+  @GET(ApiConstants.allProducts)
+  Future<List<ProductModel>> getAllProducts();
+
 }

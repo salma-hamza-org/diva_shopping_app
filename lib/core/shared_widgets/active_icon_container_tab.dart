@@ -31,9 +31,12 @@ class ActiveIconContainerTab extends StatelessWidget{
               size: 26.sp
           ),
           horizontalSpace(3),
-          Text(
-            labelText,
-            style: AppTextStyles.font14RobotoPink,),
+          Flexible(
+            child: Text(
+              labelText,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.font14RobotoPink,),
+          ),
         ],
       ),
     );
