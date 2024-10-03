@@ -18,7 +18,7 @@ class ItemOfShimmerProductList extends StatelessWidget{
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: AppColors.lightGrey,
+                color: AppColors.lighterGray,
                 borderRadius: BorderRadius.circular(25.r),
               ),
             ),
@@ -27,13 +27,13 @@ class ItemOfShimmerProductList extends StatelessWidget{
           Container(
             width: 100.w,
             height: 16.h,
-            color: AppColors.lightGrey,
+            color: AppColors.lighterGray,
           ),
           SizedBox(height: 4.h),
           Container(
             width: 50.w,
             height: 16.h,
-            color: AppColors.lightGrey,
+            color: AppColors.lighterGray,
           ),
         ],
       ),
