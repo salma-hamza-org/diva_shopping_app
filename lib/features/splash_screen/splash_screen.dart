@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 import '../../core/routing/routes_names.dart';
 import '../../core/theming/colors.dart';
@@ -18,19 +19,15 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-
-    // Initialize the controller
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500), // Animation duration
+      duration: const Duration(milliseconds: 2500),
     );
 
-    // Start the animation after a short delay
     Future.delayed(const Duration(milliseconds: 1000), () {
       _controller.forward();
     });
 
-    // Navigate to the next screen after animation completes
     Future.delayed(const Duration(milliseconds: 3000), () {
       Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
     });
@@ -45,18 +42,17 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.lightPink,
-        body: Center(
-          child: LottieBuilder.asset(
-            'assets/lottie/splash_screen.json',
-            controller: _controller,
-            onLoaded: (composition) {
-              _controller.duration = composition.duration;  // Ensure animation duration matches
-            },
-            repeat: false,  // Don't repeat the animation
-          ),
+      backgroundColor: AppColors.lightPink,
+      body: Center(
+        child: LottieBuilder.asset(
+          'assets/lottie/splash_screen.json',
+          controller: _controller,
+          onLoaded: (composition) {
+            _controller.duration = composition.duration;
+          },
+          repeat: false,
         ),
-
+      ),
     );
   }
 }
