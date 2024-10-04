@@ -5,7 +5,7 @@ import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ItemOfProductList extends StatelessWidget{
+class ItemOfProductList extends StatelessWidget {
   final ProductModel? productModel;
   const ItemOfProductList({super.key, required this.productModel});
 
@@ -21,7 +21,7 @@ class ItemOfProductList extends StatelessWidget{
                 Container(
                   height: 220.h,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.r)
+                    borderRadius: BorderRadius.circular(25.r),
                   ),
                   child: Image.network(
                     productModel?.image ?? 'assets/images/testImage.png',
@@ -32,33 +32,36 @@ class ItemOfProductList extends StatelessWidget{
                 Align(
                   alignment: AlignmentDirectional.topStart,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 5.h,left: 5.w),
+                    padding: EdgeInsets.only(top: 5.h, left: 5.w),
                     child: CircleAvatar(
                       radius: 18.r,
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.favorite_border,
-                        size: 20.sp,),
+                      child: Icon(
+                        Icons.favorite_border,
+                        size: 20.sp,
+                      ),
                     ),
                   ),
                 ),
                 Align(
                   alignment: AlignmentDirectional.bottomEnd,
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 5.h,right: 5.w),
+                    padding: EdgeInsets.only(bottom: 5.h, right: 5.w),
                     child: CircleAvatar(
                       radius: 18.r,
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.shopping_cart_rounded,
-                        size: 20.sp,),
+                      child: Icon(
+                        Icons.shopping_cart_rounded,
+                        size: 20.sp,
+                      ),
                     ),
                   ),
                 ),
-      
               ],
             ),
           ),
           Padding(
-            padding:EdgeInsets.only(top: 8.h),
+            padding: EdgeInsets.only(top: 8.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -76,7 +79,7 @@ class ItemOfProductList extends StatelessWidget{
                 ),
                 horizontalSpace(4),
                 Text(
-                 productModel?.rating?.rate.toString() ??  '4.9',
+                  productModel?.rating?.rate.toString() ?? '4.9',
                   style: AppTextStyles.font12RobotoGrey,
                 ),
               ],
