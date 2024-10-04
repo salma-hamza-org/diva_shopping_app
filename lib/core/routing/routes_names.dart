@@ -6,3 +6,4 @@ class Routes {
   static const String productDetailsScreen = '/ProductDetailsScreen';
 
 }
+
