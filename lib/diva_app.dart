@@ -6,7 +6,8 @@ import 'core/routing/routes_names.dart';
 import 'core/theming/colors.dart';
 
 class DivaApp extends StatelessWidget {
-  AppRouter appRouter;
+  final AppRouter appRouter;
+
   DivaApp({super.key, required this.appRouter});
 
   @override
@@ -19,7 +20,8 @@ class DivaApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Diva shopping app',
           theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.pink)),
+            colorScheme: ColorScheme.fromSeed(seedColor: AppColors.pink),
+          ),
           initialRoute: Routes.splashScreen,
           onGenerateRoute: (settings) => appRouter.generateRoute(settings),
         );

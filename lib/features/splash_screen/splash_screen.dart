@@ -1,10 +1,9 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
+import '../../core/routing/routes_names.dart';
 import '../../core/theming/colors.dart';
-import '../login_screen/ui/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,14 +19,17 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-
-    // Initialize the controller but don't start the animation right away
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 2500), // Animation duration
+      duration: const Duration(milliseconds: 2500),
     );
-    Future.delayed((const Duration(milliseconds: 1000)), () {
+
+    Future.delayed(const Duration(milliseconds: 1000), () {
       _controller.forward();
+    });
+
+    Future.delayed(const Duration(milliseconds: 3000), () {
+      Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
     });
   }
 
@@ -39,20 +41,18 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-      splash: Center(
+    return Scaffold(
+      backgroundColor: AppColors.lightPink,
+      body: Center(
         child: LottieBuilder.asset(
           'assets/lottie/splash_screen.json',
           controller: _controller,
           onLoaded: (composition) {
             _controller.duration = composition.duration;
           },
-          repeat: true, // Only play once
+          repeat: false,
         ),
       ),
-      backgroundColor: AppColors.lightPink,
-      nextScreen: const LoginScreen(),
-      splashIconSize: 300.r,
     );
   }
 }
