@@ -1,10 +1,12 @@
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/item_of_product_list.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/item_of_shimmer_product_list.dart';
 import 'package:flutter/material.dart';
 
 class GridOfProducts extends StatelessWidget{
   final bool isLoading;
-  const GridOfProducts({super.key,  this.isLoading = false});
+  final List<ProductModel?>? productList;
+  const GridOfProducts({super.key,  this.isLoading = false, this.productList});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,8 @@ class GridOfProducts extends StatelessWidget{
               childAspectRatio: 0.8,
             ),
             delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) => isLoading ? const ItemOfShimmerProductList() : const ItemOfProductList(),
-              childCount: 10,
+                  (BuildContext context, int index) => isLoading ? const ItemOfShimmerProductList() :  ItemOfProductList(productModel: productList?[index],),
+              childCount: productList?.length,
             ),
           ),
         ],

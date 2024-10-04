@@ -25,21 +25,8 @@ class _EmailAndPasswoedState extends State<EmailAndPasswoed> {
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
-    setupPasswordControllerListener();
   }
 
-  void setupPasswordControllerListener() {
-    passwordController.addListener(() {
-      setState(() {
-        hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        hasSpecialCharacters =
-            AppRegex.hasSpecialCharacter(passwordController.text);
-        hasNumber = AppRegex.hasNumber(passwordController.text);
-        hasMinLength = AppRegex.hasMinLength(passwordController.text);
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
