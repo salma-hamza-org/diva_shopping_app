@@ -31,6 +31,11 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
 
 ### Api Link : https://fakestoreapi.com/docs 
 
+### Splash Screen
+ <img src="https://github.com/user-attachments/assets/bc28e640-7b1b-4e34-a486-fae625e28a39" width="200"/>
+ <img src="https://github.com/user-attachments/assets/6c2012c1-f681-4879-9292-522064cf7a0d" width="200"/>
+
+
 ### LoginPage Feature
 
  <img src="https://github.com/user-attachments/assets/fc0703ef-6c3e-43a2-a583-366d7a98d29c" width="200"/>
@@ -47,6 +52,10 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
 
 |<img src="https://github.com/user-attachments/assets/e0fc914b-35c2-48a7-b989-ec33cd0f7b26" width="200"/> |
 <img src="https://github.com/user-attachments/assets/d4b22d1b-cf86-45eb-8f34-c6feb352fd1c" width="200"/> |
+
+### Product Details Feature
+|<img src="https://github.com/user-attachments/assets/c86756b3-4614-4cad-8021-7dfe494a1549" width="200"/> |
+<img src="https://github.com/user-attachments/assets/7e5e3fbe-0ccb-4e77-a6dd-3f5d4c951c7c" width="200"/> |
 
   
 ## Installation
