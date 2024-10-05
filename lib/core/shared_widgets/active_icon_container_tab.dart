@@ -4,11 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../helpers/spacing.dart';
 import '../theming/colors.dart';
 
-class ActiveIconContainerTab extends StatelessWidget{
-
+class ActiveIconContainerTab extends StatelessWidget {
   IconData icon;
   String labelText;
-  ActiveIconContainerTab({super.key,
+
+  ActiveIconContainerTab({
+    super.key,
     required this.icon,
     required this.labelText,
   });
@@ -25,17 +26,14 @@ class ActiveIconContainerTab extends StatelessWidget{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-              icon,
-              color: AppColors.pink,
-              size: 26.sp
-          ),
-          horizontalSpace(3),
+          Icon(icon, color: AppColors.pink, size: 20.sp),
+          horizontalSpace(2),
           Flexible(
             child: Text(
               labelText,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.font14RobotoPink,),
+              style: AppTextStyles.font13RobotoPink,
+            ),
           ),
         ],
       ),

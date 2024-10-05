@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class GridOfProducts extends StatelessWidget {
   final bool isLoading;
+
   const GridOfProducts({super.key, this.isLoading = false});
 
   @override
@@ -16,7 +17,7 @@ class GridOfProducts extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 10.0,
               mainAxisSpacing: 5.0,
-              childAspectRatio: 0.7,
+              childAspectRatio: 0.65,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) => isLoading
