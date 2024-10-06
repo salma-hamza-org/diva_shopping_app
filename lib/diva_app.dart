@@ -20,7 +20,7 @@ class DivaApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Diva shopping app',
           theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: AppColors.pink),scaffoldBackgroundColor: Colors.white),
-          initialRoute: Routes.splashScreen,
+          initialRoute: Routes.homePageLayout,
           onGenerateRoute: (settings) => appRouter.generateRoute(settings),
         );
       },

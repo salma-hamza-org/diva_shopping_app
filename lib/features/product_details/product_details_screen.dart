@@ -1,3 +1,5 @@
+import 'package:diva_shopping_app/core/helpers/spacing.dart';
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:diva_shopping_app/features/product_details/widgets/buttons_row.dart';
 import 'package:diva_shopping_app/features/product_details/widgets/product_image_widget.dart';
 import 'package:diva_shopping_app/features/product_details/widgets/product_name_and_rating_widget.dart';
@@ -7,7 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({super.key});
+  final ProductModel? productModel;
+  final List<ProductModel?>? productList;
+
+  const ProductDetailsScreen({super.key, this.productModel, this.productList});
 
   @override
   Widget build(BuildContext context) {
@@ -16,34 +21,37 @@ class ProductDetailsScreen extends StatelessWidget {
         body: Column(
           children: [
             Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    const ProductImageWidget(),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 24.w, vertical: 16.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const ProductNameAndRatingWidget(),
-                          SizedBox(
-                            height: 16.h,
+              child: CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ProductImageWidget(productModel: productModel),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ProductNameAndRatingWidget(productModel: productModel),
+                              verticalSpace(16),
+                              ProductPriceAndDescriptionWidget(productModel: productModel),
+                            ],
                           ),
-                          const ProductPriceAndDescriptionWidget(),
-                          SizedBox(
-                            height: 24.h,
-                          ),
-                          const YouMayAlsoLikeWidget(),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  SliverFillRemaining(
+                    child: YouMayAlsoLikeWidget(productList: productList),
+                  ),
+                ],
               ),
             ),
-            const ButtonsRow(),
+            Padding(
+              padding: EdgeInsets.only(bottom: 16.h),
+              child: const ButtonsRow(),
+            ),
           ],
         ),
       ),
