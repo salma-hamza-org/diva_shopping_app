@@ -6,20 +6,26 @@ import 'package:diva_shopping_app/features/home/ui/widgets/home_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../../core/di/dependency_injection.dart';
+import '../../categories/logic/cubit/category_cubit.dart';
 import '../../wish_list/ui/wish_list_tab.dart';
-part 'home_state.dart';
+
 part 'home_cubit.freezed.dart';
+part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final HomeRepo _homeRepo;
 
   HomeCubit(this._homeRepo) : super(const HomeState.initial());
 
-
   int currentIndexOfPage = 0;
   List<Widget> bottomScreens = [
     const HomeTab(),
-    const CategoryTab(),
+    BlocProvider(
+      create: (context) => getIt<CategoryCubit>()..getCategoriesList(),
+      child: const CategoryTab(),
+    ),
     const CartTab(),
     const WishListTab(),
   ];
@@ -28,7 +34,6 @@ class HomeCubit extends Cubit<HomeState> {
     currentIndexOfPage = index;
     emit(HomeState.tabChanged(index));
   }
-
 
   void getAllProducts() async {
     emit(const HomeState.getAllProductsLoading());
@@ -39,5 +44,4 @@ class HomeCubit extends Cubit<HomeState> {
       emit(HomeState.getAllProductsError(error: error.toString()));
     }
   }
-
 }

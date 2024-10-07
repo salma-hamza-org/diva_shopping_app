@@ -26,4 +26,6 @@ abstract class ApiService {
   @GET(ApiConstants.allProducts)
   Future<List<ProductModel>> getAllProducts();
 
+  @GET(ApiConstants.allCategories)
+  Future<List<String>> getAllCategories();
 }

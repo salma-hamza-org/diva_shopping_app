@@ -1,7 +1,7 @@
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
+import 'package:diva_shopping_app/core/shared_widgets/app_text_button.dart';
 import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
-import 'package:diva_shopping_app/core/widgets/app_text_button.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/ui/widgets/already_have_account_text.dart';
 import 'package:diva_shopping_app/features/signin_screen/ui/widgets/sign_up_bloc_listener.dart';

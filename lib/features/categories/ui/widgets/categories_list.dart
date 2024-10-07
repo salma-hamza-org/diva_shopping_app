@@ -3,21 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoriesList extends StatelessWidget {
-  const CategoriesList({super.key});
+  final List<String?>? categoriesList;
+
+  const CategoriesList({super.key, this.categoriesList});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120.h,
+      height: 125.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        itemCount: categoriesList?.length ?? 0,
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsets.symmetric(horizontal: index != 0 ? 5.w : 0.0),
           child: CategoriesItemList(
             index: index,
+            categoryName: categoriesList?[index] ?? '',
           ),
         ),
-        itemCount: 4,
       ),
     );
   }

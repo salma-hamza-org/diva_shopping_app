@@ -6,25 +6,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoriesItemList extends StatefulWidget {
   final int index;
-  const CategoriesItemList({super.key, required this.index});
+  final String categoryName;
+
+  const CategoriesItemList(
+      {super.key, required this.index, required this.categoryName});
 
   @override
   State<CategoriesItemList> createState() => _CategoriesItemListState();
 }
 
+List<String> categoriesImage = [
+  "assets/images/game-console.png",
+  "assets/images/Necklace.png",
+  "assets/images/Men_Jacket.png",
+  "assets/images/Womens Blouse.png",
+];
+
 class _CategoriesItemListState extends State<CategoriesItemList> {
-  List<String> categoriesImage = [
-    "assets/images/Womens Blouse.png",
-    "assets/images/Men_Jacket.png",
-    "assets/images/Necklace.png",
-    "assets/images/game-console.png",
-  ];
-  List<String> categoryNames = [
-    "Women's clothing",
-    "Men's clothing",
-    "Jewelery",
-    "Electronics",
-  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,7 +43,7 @@ class _CategoriesItemListState extends State<CategoriesItemList> {
             ),
             verticalSpace(5.h),
             Text(
-              categoryNames[widget.index],
+              widget.categoryName,
               style: AppTextStyles.font12RobotoBlack,
             )
           ],
