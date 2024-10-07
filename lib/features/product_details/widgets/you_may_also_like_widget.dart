@@ -20,23 +20,23 @@ class YouMayAlsoLikeWidget extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Number of items per row
-            crossAxisSpacing: 12.w, // Spacing between columns
-            mainAxisSpacing: 16.h, // Spacing between rows
-            childAspectRatio:
-            1 / 1.6, // Aspect ratio of the items
-          ),
-          itemCount: 6,
-          // Number of products in grid
-          itemBuilder: (context, index) {
-            return const ItemOfProductList();
-          },
-        ),
+        // GridView.builder(
+        //   shrinkWrap: true,
+        //   physics: const NeverScrollableScrollPhysics(),
+        //   gridDelegate:
+        //   SliverGridDelegateWithFixedCrossAxisCount(
+        //     crossAxisCount: 2, // Number of items per row
+        //     crossAxisSpacing: 12.w, // Spacing between columns
+        //     mainAxisSpacing: 16.h, // Spacing between rows
+        //     childAspectRatio:
+        //     1 / 1.6, // Aspect ratio of the items
+        //   ),
+        //   itemCount: 6,
+        //   // Number of products in grid
+        //   itemBuilder: (context, index) {
+        //     return const ItemOfProductList();
+        //   },
+        // ),
       ],
     );
   }
