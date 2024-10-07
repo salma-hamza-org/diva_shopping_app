@@ -19,6 +19,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() categoriesLoading,
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
   }) =>
@@ -26,6 +27,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
   }) =>
@@ -33,6 +35,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? categoriesLoading,
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     required TResult orElse(),
@@ -41,6 +44,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
     required TResult Function(CategoriesError value) categoriesError,
   }) =>
@@ -48,6 +52,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
   }) =>
@@ -55,6 +60,7 @@ mixin _$CategoryState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     required TResult orElse(),
@@ -125,6 +131,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() categoriesLoading,
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
   }) {
@@ -135,6 +142,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
   }) {
@@ -145,6 +153,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? categoriesLoading,
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     required TResult orElse(),
@@ -159,6 +168,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
     required TResult Function(CategoriesError value) categoriesError,
   }) {
@@ -169,6 +179,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
   }) {
@@ -179,6 +190,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     required TResult orElse(),
@@ -192,6 +204,123 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements CategoryState {
   const factory _Initial() = _$InitialImpl;
+}
+
+/// @nodoc
+abstract class _$$CategoriesLoadingImplCopyWith<$Res> {
+  factory _$$CategoriesLoadingImplCopyWith(_$CategoriesLoadingImpl value,
+          $Res Function(_$CategoriesLoadingImpl) then) =
+      __$$CategoriesLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CategoriesLoadingImplCopyWithImpl<$Res>
+    extends _$CategoryStateCopyWithImpl<$Res, _$CategoriesLoadingImpl>
+    implements _$$CategoriesLoadingImplCopyWith<$Res> {
+  __$$CategoriesLoadingImplCopyWithImpl(_$CategoriesLoadingImpl _value,
+      $Res Function(_$CategoriesLoadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of CategoryState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$CategoriesLoadingImpl implements CategoriesLoading {
+  const _$CategoriesLoadingImpl();
+
+  @override
+  String toString() {
+    return 'CategoryState.categoriesLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CategoriesLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() categoriesLoading,
+    required TResult Function(List<String?>? categoriesList) categoriesSuccess,
+    required TResult Function(ErrorHandler errorHandler) categoriesError,
+  }) {
+    return categoriesLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
+    TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
+    TResult? Function(ErrorHandler errorHandler)? categoriesError,
+  }) {
+    return categoriesLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? categoriesLoading,
+    TResult Function(List<String?>? categoriesList)? categoriesSuccess,
+    TResult Function(ErrorHandler errorHandler)? categoriesError,
+    required TResult orElse(),
+  }) {
+    if (categoriesLoading != null) {
+      return categoriesLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
+    required TResult Function(CategoriesSuccess value) categoriesSuccess,
+    required TResult Function(CategoriesError value) categoriesError,
+  }) {
+    return categoriesLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
+    TResult? Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult? Function(CategoriesError value)? categoriesError,
+  }) {
+    return categoriesLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
+    TResult Function(CategoriesSuccess value)? categoriesSuccess,
+    TResult Function(CategoriesError value)? categoriesError,
+    required TResult orElse(),
+  }) {
+    if (categoriesLoading != null) {
+      return categoriesLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CategoriesLoading implements CategoryState {
+  const factory CategoriesLoading() = _$CategoriesLoadingImpl;
 }
 
 /// @nodoc
@@ -274,6 +403,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() categoriesLoading,
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
   }) {
@@ -284,6 +414,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
   }) {
@@ -294,6 +425,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? categoriesLoading,
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     required TResult orElse(),
@@ -308,6 +440,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
     required TResult Function(CategoriesError value) categoriesError,
   }) {
@@ -318,6 +451,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
   }) {
@@ -328,6 +462,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     required TResult orElse(),
@@ -423,6 +558,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() categoriesLoading,
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
   }) {
@@ -433,6 +569,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? categoriesLoading,
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
   }) {
@@ -443,6 +580,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? categoriesLoading,
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     required TResult orElse(),
@@ -457,6 +595,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(CategoriesLoading value) categoriesLoading,
     required TResult Function(CategoriesSuccess value) categoriesSuccess,
     required TResult Function(CategoriesError value) categoriesError,
   }) {
@@ -467,6 +606,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
+    TResult? Function(CategoriesLoading value)? categoriesLoading,
     TResult? Function(CategoriesSuccess value)? categoriesSuccess,
     TResult? Function(CategoriesError value)? categoriesError,
   }) {
@@ -477,6 +617,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(CategoriesLoading value)? categoriesLoading,
     TResult Function(CategoriesSuccess value)? categoriesSuccess,
     TResult Function(CategoriesError value)? categoriesError,
     required TResult orElse(),

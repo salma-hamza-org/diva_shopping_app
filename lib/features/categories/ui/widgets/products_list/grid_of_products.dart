@@ -1,5 +1,5 @@
-import 'package:diva_shopping_app/features/categories/ui/widgets/item_of_product_list.dart';
-import 'package:diva_shopping_app/features/categories/ui/widgets/item_of_shimmer_product_list.dart';
+import 'package:diva_shopping_app/features/categories/ui/widgets/products_list/item_of_product_list.dart';
+import 'package:diva_shopping_app/features/categories/ui/widgets/products_list/item_of_shimmer_product_list.dart';
 import 'package:flutter/material.dart';
 
 class GridOfProducts extends StatelessWidget {

@@ -10,6 +10,7 @@ class CategoryCubit extends Cubit<CategoryState> {
 
   /// getCategoriesName
   void getCategoriesList() async {
+    emit(const CategoryState.categoriesLoading());
     try {
       final categoriesList = await _categoryRepo.getAllCategories();
       emit(CategoryState.categoriesSuccess(categoriesList));

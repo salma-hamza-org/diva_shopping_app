@@ -11,9 +11,14 @@ class CategoriesBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CategoryCubit, CategoryState>(
       buildWhen: (previous, current) =>
-          current is CategoriesSuccess || current is CategoriesError,
+          current is CategoriesLoading ||
+          current is CategoriesSuccess ||
+          current is CategoriesError,
       builder: (context, state) {
         return state.maybeWhen(
+          categoriesLoading: () {
+            return setupLoading();
+          },
           categoriesSuccess: (categoriesList) {
             return setupSuccess(categoriesList);
           },
@@ -23,6 +28,12 @@ class CategoriesBlocBuilder extends StatelessWidget {
           },
         );
       },
+    );
+  }
+
+  Widget setupLoading() {
+    return const CategoriesList(
+      isLoading: true,
     );
   }
 
