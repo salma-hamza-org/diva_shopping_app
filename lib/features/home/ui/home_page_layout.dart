@@ -1,15 +1,11 @@
 import 'package:diva_shopping_app/core/theming/colors.dart';
+import 'package:diva_shopping_app/features/cart/ui/cart_tab.dart';
+import 'package:diva_shopping_app/features/categories/ui/category_tab.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/home_tab.dart';
+import 'package:diva_shopping_app/features/wish_list/ui/wish_list_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../core/di/dependency_injection.dart';
 import '../../../core/shared_widgets/active_icon_container_tab.dart';
-import '../../cart/ui/cart_tab.dart';
-import '../../categories/logic/cubit/category_cubit.dart';
-import '../../categories/ui/category_tab.dart';
-import '../../wish_list/ui/wish_list_tab.dart';
 
 class HomePageLayout extends StatefulWidget {
   const HomePageLayout({super.key});
@@ -19,16 +15,11 @@ class HomePageLayout extends StatefulWidget {
 }
 
 class _HomePageLayoutState extends State<HomePageLayout> {
-  int selectedIndex = 0;
 
+  int selectedIndex = 0;
   List<Widget> bottomScreens = [
     const HomeTab(),
-    BlocProvider(
-      create: (context) => getIt<CategoryCubit>()
-        ..getCategoriesList()
-        ..getCategoryProducts('electronics'),
-      child: const CategoryTab(),
-    ),
+    const CategoryTab(),
     const CartTab(),
     const WishListTab(),
   ];

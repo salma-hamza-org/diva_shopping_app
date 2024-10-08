@@ -1,7 +1,6 @@
-import 'package:diva_shopping_app/features/categories/ui/widgets/products_list/grid_of_products.dart';
+import 'package:diva_shopping_app/core/shared_widgets/grid_of_products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../logic/cubit/category_cubit.dart';
 import '../../../logic/cubit/category_state.dart';
 
@@ -33,15 +32,19 @@ class CategoryProductsBlocBuilder extends StatelessWidget {
   }
 
   Widget setupLoading() {
-    return const GridOfProducts(
-      isLoading: true,
+    return const Expanded(
+      child: GridOfProducts(
+        isLoading: true,
+      ),
     );
   }
 
   Widget setupSuccess(products) {
-    return GridOfProducts(
-      products: products,
-      isLoading: false,
+    return Expanded(
+      child: GridOfProducts(
+        productList: products,
+        isLoading: false,
+      ),
     );
   }
 

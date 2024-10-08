@@ -23,7 +23,7 @@ mixin _$CategoryState {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) =>
@@ -35,7 +35,7 @@ mixin _$CategoryState {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) =>
@@ -47,7 +47,7 @@ mixin _$CategoryState {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -159,7 +159,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -174,7 +174,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -189,7 +189,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -300,7 +300,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -315,7 +315,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -330,7 +330,7 @@ class _$CategoriesLoadingImpl implements CategoriesLoading {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -479,7 +479,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -494,7 +494,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -509,7 +509,7 @@ class _$CategoriesSuccessImpl implements CategoriesSuccess {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -658,7 +658,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -673,7 +673,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -688,7 +688,7 @@ class _$CategoriesErrorImpl implements CategoriesError {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -811,7 +811,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -826,7 +826,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -841,7 +841,7 @@ class _$CategoryProductsLoadingImpl implements CategoryProductsLoading {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -913,7 +913,7 @@ abstract class _$$CategoryProductsSuccessImplCopyWith<$Res> {
           $Res Function(_$CategoryProductsSuccessImpl) then) =
       __$$CategoryProductsSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<CategoryResponseModel?>? productsList});
+  $Res call({List<ProductModel?>? productsList});
 }
 
 /// @nodoc
@@ -936,7 +936,7 @@ class __$$CategoryProductsSuccessImplCopyWithImpl<$Res>
       freezed == productsList
           ? _value._productsList
           : productsList // ignore: cast_nullable_to_non_nullable
-              as List<CategoryResponseModel?>?,
+              as List<ProductModel?>?,
     ));
   }
 }
@@ -944,13 +944,12 @@ class __$$CategoryProductsSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
-  const _$CategoryProductsSuccessImpl(
-      final List<CategoryResponseModel?>? productsList)
+  const _$CategoryProductsSuccessImpl(final List<ProductModel?>? productsList)
       : _productsList = productsList;
 
-  final List<CategoryResponseModel?>? _productsList;
+  final List<ProductModel?>? _productsList;
   @override
-  List<CategoryResponseModel?>? get productsList {
+  List<ProductModel?>? get productsList {
     final value = _productsList;
     if (value == null) return null;
     if (_productsList is EqualUnmodifiableListView) return _productsList;
@@ -993,7 +992,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -1008,7 +1007,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -1023,7 +1022,7 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),
@@ -1086,10 +1085,9 @@ class _$CategoryProductsSuccessImpl implements CategoryProductsSuccess {
 
 abstract class CategoryProductsSuccess implements CategoryState {
   const factory CategoryProductsSuccess(
-          final List<CategoryResponseModel?>? productsList) =
-      _$CategoryProductsSuccessImpl;
+      final List<ProductModel?>? productsList) = _$CategoryProductsSuccessImpl;
 
-  List<CategoryResponseModel?>? get productsList;
+  List<ProductModel?>? get productsList;
 
   /// Create a copy of CategoryState
   /// with the given fields replaced by the non-null parameter values.
@@ -1174,7 +1172,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     required TResult Function(List<String?>? categoriesList) categoriesSuccess,
     required TResult Function(ErrorHandler errorHandler) categoriesError,
     required TResult Function() categoryProductsLoading,
-    required TResult Function(List<CategoryResponseModel?>? productsList)
+    required TResult Function(List<ProductModel?>? productsList)
         categoryProductsSuccess,
     required TResult Function(ErrorHandler errorHandler) categoryProductsError,
   }) {
@@ -1189,7 +1187,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult? Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoriesError,
     TResult? Function()? categoryProductsLoading,
-    TResult? Function(List<CategoryResponseModel?>? productsList)?
+    TResult? Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult? Function(ErrorHandler errorHandler)? categoryProductsError,
   }) {
@@ -1204,7 +1202,7 @@ class _$CategoryProductsErrorImpl implements CategoryProductsError {
     TResult Function(List<String?>? categoriesList)? categoriesSuccess,
     TResult Function(ErrorHandler errorHandler)? categoriesError,
     TResult Function()? categoryProductsLoading,
-    TResult Function(List<CategoryResponseModel?>? productsList)?
+    TResult Function(List<ProductModel?>? productsList)?
         categoryProductsSuccess,
     TResult Function(ErrorHandler errorHandler)? categoryProductsError,
     required TResult orElse(),

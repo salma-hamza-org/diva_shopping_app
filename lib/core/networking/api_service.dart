@@ -7,8 +7,6 @@ import 'package:diva_shopping_app/features/signin_screen/data/models/sign_up_req
 import 'package:diva_shopping_app/features/signin_screen/data/models/sign_up_response.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../features/categories/data/models/category_response_model.dart';
-
 part 'api_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)
@@ -32,7 +30,7 @@ abstract class ApiService {
   Future<List<String>> getAllCategories();
 
   @GET('${ApiConstants.categoryProducts}{categoryName}')
-  Future<List<CategoryResponseModel>> getCategoryProducts({
+  Future<List<ProductModel>> getCategoryProducts({
     @Path("categoryName") required String categoryName,
   });
 }

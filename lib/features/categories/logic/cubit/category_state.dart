@@ -1,4 +1,4 @@
-import 'package:diva_shopping_app/features/categories/data/models/category_response_model.dart';
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
@@ -19,7 +19,7 @@ class CategoryState with _$CategoryState {
   const factory CategoryState.categoryProductsLoading() =
       CategoryProductsLoading;
   const factory CategoryState.categoryProductsSuccess(
-      List<CategoryResponseModel?>? productsList) = CategoryProductsSuccess;
+      List<ProductModel?>? productsList) = CategoryProductsSuccess;
   const factory CategoryState.categoryProductsError(ErrorHandler errorHandler) =
       CategoryProductsError;
 }

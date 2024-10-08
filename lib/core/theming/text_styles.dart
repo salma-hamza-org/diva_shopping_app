@@ -56,6 +56,12 @@ class AppTextStyles {
     color: AppColors.darkGrey,
   );
 
+  static TextStyle font15RobotoBlack = GoogleFonts.roboto(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+
   static TextStyle font18RobotoWhite = GoogleFonts.roboto(
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
@@ -72,6 +78,11 @@ class AppTextStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w400,
     color: Colors.black,
+  );
+  static TextStyle font18RobotoPink = GoogleFonts.roboto(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.pink,
   );
 
   static TextStyle font13RobotoBlack = GoogleFonts.roboto(

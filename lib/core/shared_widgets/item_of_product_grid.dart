@@ -7,11 +7,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemOfProductList extends StatelessWidget {
   final ProductModel? productModel;
-  const ItemOfProductList({super.key, required this.productModel});
+  final GestureTapCallback? onTap;
+  const ItemOfProductList({super.key, required this.productModel, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -1,7 +1,8 @@
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
+
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
-import '../models/category_response_model.dart';
 
 class CategoryRepo {
   final ApiService _apiService;
@@ -17,7 +18,7 @@ class CategoryRepo {
     }
   }
 
-  Future<ApiResult<List<CategoryResponseModel>>> getCategoryProducts(
+  Future<ApiResult<List<ProductModel>>> getCategoryProducts(
       String categoryName) async {
     try {
       final response =

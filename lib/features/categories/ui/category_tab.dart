@@ -1,3 +1,4 @@
+import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
 import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/features/categories/logic/cubit/category_cubit.dart';
@@ -14,27 +15,32 @@ class CategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoryCubit, CategoryState>(
-      builder: (context, state) {
-        return Scaffold(
-          backgroundColor: AppColors.lighterGray,
-          body: SafeArea(
-            child: Container(
-              width: double.infinity,
-              margin: const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 28.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CategoriesTopBar(),
-                  verticalSpace(10.h),
-                  const CategoriesBlocBuilder(),
-                  const CategoryProductsBlocBuilder(),
-                ],
+    return BlocProvider(
+      create: (context) => getIt<CategoryCubit>()
+        ..getCategoriesList()
+        ..getCategoryProducts('electronics'),
+      child: BlocBuilder<CategoryCubit, CategoryState>(
+        builder: (context, state) {
+          return Scaffold(
+            backgroundColor: AppColors.lighterGray,
+            body: SafeArea(
+              child: Container(
+                width: double.infinity,
+                margin: const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 28.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const CategoriesTopBar(),
+                    verticalSpace(10.h),
+                    const CategoriesBlocBuilder(),
+                    const CategoryProductsBlocBuilder(),
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

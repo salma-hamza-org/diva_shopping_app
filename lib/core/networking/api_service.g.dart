@@ -160,13 +160,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<List<CategoryResponseModel>> getCategoryProducts(
+  Future<List<ProductModel>> getCategoryProducts(
       {required String categoryName}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CategoryResponseModel>>(Options(
+    final _options = _setStreamType<List<ProductModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -183,11 +183,10 @@ class _ApiService implements ApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CategoryResponseModel> _value;
+    late List<ProductModel> _value;
     try {
       _value = _result.data!
-          .map((dynamic i) =>
-              CategoryResponseModel.fromJson(i as Map<String, dynamic>))
+          .map((dynamic i) => ProductModel.fromJson(i as Map<String, dynamic>))
           .toList();
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
