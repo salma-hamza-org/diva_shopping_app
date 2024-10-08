@@ -51,7 +51,6 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
 ### HomePage Feature
 
 <img src="https://github.com/user-attachments/assets/e0fc914b-35c2-48a7-b989-ec33cd0f7b26" width="200"/>
-<img src="https://github.com/user-attachments/assets/d4b22d1b-cf86-45eb-8f34-c6feb352fd1c" width="200"/> 
 <img src="https://github.com/user-attachments/assets/2e7865ea-0b1e-4c0a-943d-056b07e42138" width="200"/> 
 
 ### Product Details Feature
