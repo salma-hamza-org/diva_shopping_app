@@ -4,8 +4,11 @@ import 'package:diva_shopping_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../data/models/category_response_model.dart';
+
 class ItemOfProductList extends StatelessWidget {
-  const ItemOfProductList({super.key});
+  final CategoryResponseModel? product;
+  const ItemOfProductList({super.key, this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +22,8 @@ class ItemOfProductList extends StatelessWidget {
                 height: 200.h,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(25.r)),
-                child: Image.asset(
-                  'assets/images/hijab_girl1.png',
+                child: Image.network(
+                  product?.image ?? '',
                   fit: BoxFit.fill,
                   width: double.infinity,
                 ),
@@ -63,7 +66,7 @@ class ItemOfProductList extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'Mint green Jacket',
+                  product?.title ?? 'Title',
                   style: AppTextStyles.font14RobotoBlack,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -75,7 +78,7 @@ class ItemOfProductList extends StatelessWidget {
               ),
               horizontalSpace(4),
               Text(
-                '4.9',
+                product?.rating.toString() ?? 'Rating',
                 style: AppTextStyles.font12RobotoGrey,
               ),
             ],
@@ -84,7 +87,7 @@ class ItemOfProductList extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 4.h),
           child: Text(
-            '545 L.E',
+            '${product?.price} L.E',
             style: AppTextStyles.font14RobotoBlack,
           ),
         ),

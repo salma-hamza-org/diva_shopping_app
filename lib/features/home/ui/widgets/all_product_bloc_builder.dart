@@ -1,8 +1,8 @@
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'grid_of_products.dart';
 
+import 'grid_of_products.dart';
 
 class AllProductBlocBuilder extends StatelessWidget {
   const AllProductBlocBuilder({super.key});
@@ -11,12 +11,12 @@ class AllProductBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-
-      current is GetAllProductsLoading|| current is GetAllProductsSuccess || current is GetAllProductsError,
+          current is GetAllProductsLoading ||
+          current is GetAllProductsSuccess ||
+          current is GetAllProductsError,
       builder: (context, state) {
         return state.maybeWhen(
-
-          getAllProductsLoading: (){
+          getAllProductsLoading: () {
             return setupLoading();
           },
           getAllProductsSuccess: (productModelList) {
@@ -30,6 +30,7 @@ class AllProductBlocBuilder extends StatelessWidget {
       },
     );
   }
+
   Widget setupLoading() {
     return const GridOfProducts(
       isLoading: true,
@@ -38,7 +39,7 @@ class AllProductBlocBuilder extends StatelessWidget {
 
   Widget setupSuccess(productModelList) {
     return GridOfProducts(
-      productList : productModelList,
+      productList: productModelList,
       isLoading: false,
     );
   }

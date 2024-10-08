@@ -40,6 +40,7 @@ class CategoriesBlocBuilder extends StatelessWidget {
   Widget setupSuccess(categoriesList) {
     return CategoriesList(
       categoriesList: categoriesList,
+      isLoading: false,
     );
   }
 

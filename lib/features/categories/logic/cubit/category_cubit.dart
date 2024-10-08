@@ -12,11 +12,37 @@ class CategoryCubit extends Cubit<CategoryState> {
   void getCategoriesList() async {
     emit(const CategoryState.categoriesLoading());
     try {
-      final categoriesList = await _categoryRepo.getAllCategories();
-      emit(CategoryState.categoriesSuccess(categoriesList));
+      final apiResult = await _categoryRepo.getAllCategories();
+      apiResult.when(
+        success: (categoriesList) {
+          emit(CategoryState.categoriesSuccess(categoriesList));
+        },
+        failure: (errorHandler) {
+          emit(CategoryState.categoriesError(errorHandler));
+        },
+      );
     } catch (error) {
       emit(CategoryState.categoriesError(
           ErrorHandler.handle('No categories found')));
+    }
+  }
+
+  /// getCategoryProducts
+  void getCategoryProducts(String categoryName) async {
+    emit(const CategoryState.categoryProductsLoading());
+    try {
+      final apiResult = await _categoryRepo.getCategoryProducts(categoryName);
+      apiResult.when(
+        success: (productsList) {
+          emit(CategoryState.categoryProductsSuccess(productsList));
+        },
+        failure: (errorHandler) {
+          emit(CategoryState.categoryProductsError(errorHandler));
+        },
+      );
+    } catch (error) {
+      emit(CategoryState.categoryProductsError(
+          ErrorHandler.handle('No products found for this category')));
     }
   }
 }

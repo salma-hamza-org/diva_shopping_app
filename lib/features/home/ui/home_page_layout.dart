@@ -24,7 +24,9 @@ class _HomePageLayoutState extends State<HomePageLayout> {
   List<Widget> bottomScreens = [
     const HomeTab(),
     BlocProvider(
-      create: (context) => getIt<CategoryCubit>()..getCategoriesList(),
+      create: (context) => getIt<CategoryCubit>()
+        ..getCategoriesList()
+        ..getCategoryProducts('electronics'),
       child: const CategoryTab(),
     ),
     const CartTab(),

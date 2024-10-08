@@ -22,7 +22,7 @@ class DivaApp extends StatelessWidget {
           theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: AppColors.pink),
               scaffoldBackgroundColor: Colors.white),
-          initialRoute: Routes.splashScreen,
+          initialRoute: Routes.signInScreen,
           onGenerateRoute: (settings) => appRouter.generateRoute(settings),
         );
       },
