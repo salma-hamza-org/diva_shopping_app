@@ -1,3 +1,4 @@
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -5,7 +6,9 @@ import '../../../core/theming/colors.dart';
 import '../../../core/theming/text_styles.dart';
 
 class ProductNameAndRatingWidget extends StatelessWidget {
-  const ProductNameAndRatingWidget({super.key});
+  final ProductModel? productModel;
+
+  const ProductNameAndRatingWidget({super.key, this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class ProductNameAndRatingWidget extends StatelessWidget {
         SizedBox(
           width: 200.w,
           child: Text(
-            'Rain Jacket Women Windbreaker Striped Climbing Raincoats',
+            productModel?.title ??'Name of item',
             style: AppTextStyles.font16RobotoBlack
                 .copyWith(color: Colors.grey.shade700),
             overflow: TextOverflow.ellipsis,
@@ -26,7 +29,7 @@ class ProductNameAndRatingWidget extends StatelessWidget {
           color: AppColors.yellow,
         ),
         Text(
-          '3.8 (679)',
+          '${productModel?.rating?.rate.toString()} (${productModel?.rating?.count})',
           style: AppTextStyles.font12RobotoGrey,
         ),
       ],

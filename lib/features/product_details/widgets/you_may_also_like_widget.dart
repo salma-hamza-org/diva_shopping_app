@@ -1,43 +1,32 @@
+import 'package:diva_shopping_app/core/helpers/spacing.dart';
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
+import 'package:diva_shopping_app/core/shared_widgets/grid_of_products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/theming/text_styles.dart';
-import '../../home/ui/widgets/item_of_product_list.dart';
 
 class YouMayAlsoLikeWidget extends StatelessWidget {
-  const YouMayAlsoLikeWidget({super.key});
+  final List<ProductModel?>? productList;
+  const YouMayAlsoLikeWidget({super.key, this.productList});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'You may also like',
-          style: AppTextStyles.font18RobotoBlack
-              .copyWith(fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        // GridView.builder(
-        //   shrinkWrap: true,
-        //   physics: const NeverScrollableScrollPhysics(),
-        //   gridDelegate:
-        //   SliverGridDelegateWithFixedCrossAxisCount(
-        //     crossAxisCount: 2, // Number of items per row
-        //     crossAxisSpacing: 12.w, // Spacing between columns
-        //     mainAxisSpacing: 16.h, // Spacing between rows
-        //     childAspectRatio:
-        //     1 / 1.6, // Aspect ratio of the items
-        //   ),
-        //   itemCount: 6,
-        //   // Number of products in grid
-        //   itemBuilder: (context, index) {
-        //     return const ItemOfProductList();
-        //   },
-        // ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'You may also like',
+            style: AppTextStyles.font18RobotoBlack
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
+         verticalSpace(10),
+          Expanded(
+              child: GridOfProducts(productList: productList)
+          ),
+        ],
+      ),
     );
   }
 }

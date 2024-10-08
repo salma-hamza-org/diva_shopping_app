@@ -1,3 +1,4 @@
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
@@ -5,7 +6,9 @@ import 'package:readmore/readmore.dart';
 import '../../../core/theming/text_styles.dart';
 
 class ProductPriceAndDescriptionWidget extends StatelessWidget {
-  const ProductPriceAndDescriptionWidget({super.key});
+  final ProductModel? productModel;
+
+  const ProductPriceAndDescriptionWidget({super.key, this.productModel});
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +16,14 @@ class ProductPriceAndDescriptionWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '39.9 L.E',
+          '${productModel?.price?.toDouble()} L.E',
           style: AppTextStyles.font22RobotoBlack,
         ),
         SizedBox(
           height: 16.h,
         ),
         ReadMoreText(
-          'Lightweight perfect for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but does not overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look. ',
+          productModel?.description ?? 'description of item',
           style: AppTextStyles.font14RobotoBlack,
           trimMode: TrimMode.Line,
           trimLines: 2,
