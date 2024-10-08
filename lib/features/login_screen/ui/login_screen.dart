@@ -1,7 +1,6 @@
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
 import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
-import 'package:diva_shopping_app/core/widgets/app_text_button.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:diva_shopping_app/features/login_screen/ui/widgets/dont_have_account_text.dart';
 import 'package:diva_shopping_app/features/login_screen/ui/widgets/email_and_password.dart';
@@ -11,6 +10,8 @@ import 'package:diva_shopping_app/features/login_screen/ui/widgets/terms_and_con
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/shared_widgets/app_text_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -31,11 +32,12 @@ class LoginScreen extends StatelessWidget {
                 const EmailAndPasswoed(),
                 verticalSpace(40),
                 AppTextButton(
-                    buttonText: "Sign In",
-                    textStyle: AppTextStyles.font18RobotoWhite,
-                    onPressed: () {
-                      validateThenDoLogin(context);
-                    }),
+                  buttonText: "Sign In",
+                  textStyle: AppTextStyles.font18RobotoWhite,
+                  onPressed: () {
+                    validateThenDoLogin(context);
+                  },
+                ),
                 verticalSpace(16),
                 const TermsAndConditionsText(),
                 verticalSpace(16),

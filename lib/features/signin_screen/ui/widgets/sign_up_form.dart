@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/shared_widgets/app_text_form_field.dart';
 import '../../logic/cubit/sign_up_cubit.dart';
 
 class SignupForm extends StatefulWidget {

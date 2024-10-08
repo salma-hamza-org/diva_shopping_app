@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:diva_shopping_app/core/networking/dio_factory.dart';
+import 'package:diva_shopping_app/features/categories/data/repos/category_repo.dart';
+import 'package:diva_shopping_app/features/categories/logic/cubit/category_cubit.dart';
 import 'package:diva_shopping_app/features/home/data/repos/home_repo.dart';
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
 import 'package:diva_shopping_app/features/login_screen/data/repos/login_repo.dart';
@@ -28,4 +30,8 @@ Future<void> setupGetIt() async {
   // home
   getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
+
+  // category
+  getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
+  getIt.registerFactory<CategoryCubit>(() => CategoryCubit(getIt()));
 }

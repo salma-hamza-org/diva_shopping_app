@@ -1,8 +1,8 @@
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/shared_widgets/grid_of_products.dart';
 
+import '../../../../core/shared_widgets/grid_of_products.dart';
 
 class AllProductBlocBuilder extends StatelessWidget {
   const AllProductBlocBuilder({super.key});

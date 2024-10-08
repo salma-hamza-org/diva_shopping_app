@@ -1,5 +1,5 @@
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
-import 'package:diva_shopping_app/core/widgets/app_text_form_field.dart';
+import 'package:diva_shopping_app/core/shared_widgets/app_text_form_field.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +25,6 @@ class _EmailAndPasswoedState extends State<EmailAndPasswoed> {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
   }
-
 
   @override
   Widget build(BuildContext context) {
