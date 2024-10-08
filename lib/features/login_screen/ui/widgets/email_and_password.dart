@@ -1,4 +1,3 @@
-import 'package:diva_shopping_app/core/helpers/app_regex.dart';
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
 import 'package:diva_shopping_app/core/widgets/app_text_form_field.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';

@@ -1,3 +1,6 @@
+import 'package:diva_shopping_app/core/helpers/constants.dart';
+import 'package:diva_shopping_app/core/helpers/shared_pref.dart';
+import 'package:diva_shopping_app/core/networking/dio_factory.dart';
 import 'package:diva_shopping_app/features/login_screen/data/models/login_request_body.dart';
 import 'package:diva_shopping_app/features/login_screen/data/repos/login_repo.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_state.dart';
@@ -21,10 +24,16 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
 
-    response.when(success: (loginResponse) {
+    response.when(success: (loginResponse) async{
+      await saveUserToken(loginResponse.token ?? '');
       emit(LoginState.success(loginResponse));
     }, failure: (error) {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });
+  }
+
+  Future<void> saveUserToken(String token) async {
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
+    DioFactory.setTokenIntoHeaderAfterLogin(token);
   }
 }
