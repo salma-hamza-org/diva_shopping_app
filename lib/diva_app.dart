@@ -28,7 +28,7 @@ class DivaApp extends StatelessWidget {
               )),
           initialRoute:
               isLoggedInUser ? Routes.homePageLayout : Routes.splashScreen,
-          onGenerateRoute: (settings) => appRouter.generateRoute(settings),
+          onGenerateRoute: appRouter.generateRoute,
         );
       },
     );

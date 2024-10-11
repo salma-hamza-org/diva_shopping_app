@@ -1,5 +1,6 @@
 import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
+import 'package:diva_shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:diva_shopping_app/features/home/ui/home_page_layout.dart';
 import 'package:diva_shopping_app/features/product_details/product_details_screen.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
@@ -13,7 +14,6 @@ import '../../features/splash_screen/splash_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
-
     final args = settings.arguments as Map<String, dynamic>?;
 
     switch (settings.name) {
@@ -49,9 +49,13 @@ class AppRouter {
             productList: args?['productList'],
           ),
         );
-        case Routes.profileSettingsScreen:
+      case Routes.profileSettingsScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileSettings(),
+        );
+      case Routes.checkoutScreen:
+        return MaterialPageRoute(
+          builder: (_) => CheckoutScreen(),
         );
 
       default:

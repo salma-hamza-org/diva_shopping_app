@@ -5,6 +5,7 @@ class Routes {
   static const String homePageLayout = '/homePageLayout';
   static const String productDetailsScreen = '/ProductDetailsScreen';
   static const String profileSettingsScreen = '/profileSettingsScreen';
+  static const String checkoutScreen = '/checkoutScreen';
 
 }
 
