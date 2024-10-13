@@ -62,9 +62,10 @@ https://github.com/user-attachments/assets/84c0b987-a183-4978-b9c8-5359b1d4aefc
 
 
 ### Profile Settings Feature
-<img src="https://github.com/user-attachments/assets/9ef83775-39de-46ec-8d59-f0e48384066e" width="200"/> 
+<img src="https://github.com/user-attachments/assets/2e4f8fc5-7c22-4c41-96d9-e68944736235" width="200"/> 
+<img src="https://github.com/user-attachments/assets/f7bfdcfa-c133-460b-8e8b-b3ba6a985e6b" width="200"/> 
 
-  
+
 ## Installation
 
 To run the Diva app locally, follow these steps:
