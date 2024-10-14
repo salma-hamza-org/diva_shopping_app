@@ -1,4 +1,7 @@
+import 'package:diva_shopping_app/core/helpers/extentions.dart';
+import 'package:diva_shopping_app/core/helpers/shared_pref.dart';
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
+import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/core/shared_widgets/item_of_setting_list.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +42,7 @@ class ProfileSettings extends StatelessWidget{
       Icons.security,
       Icons.privacy_tip_outlined,
       Icons.message_sharp,
-      Icons.star_outline
+      Icons.star_outline,
 
     ];
     return Scaffold(
@@ -51,8 +54,11 @@ class ProfileSettings extends StatelessWidget{
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: (){},
-              icon: const Icon(Icons.add_shopping_cart)
+              onPressed: (){
+                logOut(context);
+              },
+              icon: Icon(Icons.logout,
+              size: 26.sp,)
           )
         ],
       ),
@@ -95,7 +101,6 @@ class ProfileSettings extends StatelessWidget{
               ),
             ),
             verticalSpace(30),
-
             Text('Privacy',
                 style: AppTextStyles.font18RobotoPink
             ),
@@ -128,10 +133,66 @@ class ProfileSettings extends StatelessWidget{
                 itemCount: textOfPrivacyList.length,
               ),
             ),
+            verticalSpace(20),
+            GestureDetector(
+              onTap: (){
+                logOut(context);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      spreadRadius: 2,
+                      blurRadius: 6,
+                      offset: const Offset(3, 3),
+                    ),
+                  ],
+
+                ),
+                child: const ItemOfSettingList(
+                  icon: Icons.logout,
+                  text: 'Log Out ',
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
+
+
+  Future<void> logOut(context) async {
+    await SharedPrefHelper.clearAllSecuredData();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        icon: const Icon(
+          Icons.check,
+          color: Colors.green,
+          size: 32,
+        ),
+        content: Text(
+          'Logged Out Successfully',
+          style: AppTextStyles.font15DarkGreyMedium,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (Route<dynamic> route) => false,);
+            },
+            child: Text(
+              'Got it',
+              style: AppTextStyles.font13RobotoPink,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
 }
 
