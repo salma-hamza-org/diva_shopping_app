@@ -29,13 +29,16 @@ class ProductDetailsScreen extends StatelessWidget {
                       children: [
                         ProductImageWidget(productModel: productModel),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 24.w, vertical: 16.h),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              ProductNameAndRatingWidget(productModel: productModel),
+                              ProductNameAndRatingWidget(
+                                  productModel: productModel),
                               verticalSpace(16),
-                              ProductPriceAndDescriptionWidget(productModel: productModel),
+                              ProductPriceAndDescriptionWidget(
+                                  productModel: productModel),
                             ],
                           ),
                         ),
@@ -50,7 +53,7 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 16.h),
-              child: const ButtonsRow(),
+              child: ButtonsRow(productModel: productModel),
             ),
           ],
         ),
