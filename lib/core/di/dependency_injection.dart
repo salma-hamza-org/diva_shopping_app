@@ -8,6 +8,8 @@ import 'package:diva_shopping_app/features/login_screen/data/repos/login_repo.da
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/data/repos/sign_up_repo.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
+import 'package:diva_shopping_app/features/wish_list/data/repo/favorite_repo.dart';
+import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 import '../networking/api_service.dart';
@@ -34,4 +36,9 @@ Future<void> setupGetIt() async {
   // category
   getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
   getIt.registerFactory<CategoryCubit>(() => CategoryCubit(getIt()));
+
+  // favorite
+  getIt.registerLazySingleton<FavoriteRepo>(() => FavoriteRepo());
+  getIt.registerFactory<FavoriteCubit>(
+      () => FavoriteCubit(getIt<FavoriteRepo>()));
 }
