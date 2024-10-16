@@ -62,9 +62,12 @@ class AppRouter {
 
       case Routes.productDetailsScreen:
         return MaterialPageRoute(
-          builder: (_) => ProductDetailsScreen(
-            productModel: args?['productModel'],
-            productList: args?['productList'],
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CartCubit>(),
+            child: ProductDetailsScreen(
+              productModel: args?['productModel'],
+              productList: args?['productList'],
+            ),
           ),
         );
       case Routes.profileSettingsScreen:
