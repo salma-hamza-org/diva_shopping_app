@@ -6,7 +6,10 @@ import '../../../../core/shared_widgets/custom_button.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class PriceAndCheckoutButtonRow extends StatelessWidget {
-  const PriceAndCheckoutButtonRow({super.key});
+  String totalPrice;
+
+
+  PriceAndCheckoutButtonRow(this.totalPrice);
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class PriceAndCheckoutButtonRow extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '200 L.E',
+                    '$totalPrice L.E',
                     style: AppTextStyles.font16RobotoBlack,
                   ),
                 ],
