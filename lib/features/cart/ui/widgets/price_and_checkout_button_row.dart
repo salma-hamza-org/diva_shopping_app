@@ -1,10 +1,15 @@
+import 'package:diva_shopping_app/core/helpers/extentions.dart';
+import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/shared_widgets/custom_button.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class PriceAndCheckoutButtonRow extends StatelessWidget {
-  const PriceAndCheckoutButtonRow({super.key});
+  String totalPrice;
+
+
+  PriceAndCheckoutButtonRow(this.totalPrice);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +43,7 @@ class PriceAndCheckoutButtonRow extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '200 L.E',
+                    '$totalPrice L.E',
                     style: AppTextStyles.font16RobotoBlack,
                   ),
                 ],
@@ -50,7 +55,9 @@ class PriceAndCheckoutButtonRow extends StatelessWidget {
                   text: 'Checkout',
                   textStyle: AppTextStyles.font18RobotoWhite,
                   width: double.infinity,
-                  onTap: () {}),
+                  onTap: () {
+                    context.pushNamed(Routes.checkoutScreen);
+                  }),
             ],
           ),
         ));

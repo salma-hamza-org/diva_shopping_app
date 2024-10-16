@@ -1,12 +1,22 @@
+import 'package:diva_shopping_app/features/cart/data/model/cart_model.dart';
+import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/colors.dart';
 import '../../../../core/theming/text_styles.dart';
 
-class CartItemWidget extends StatelessWidget {
-  const CartItemWidget({super.key});
+class CartItemWidget extends StatefulWidget {
+  CartModel cartModel;
 
+  CartItemWidget(this.cartModel);
+
+  @override
+  State<CartItemWidget> createState() => _CartItemWidgetState();
+}
+
+class _CartItemWidgetState extends State<CartItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,9 +41,9 @@ class CartItemWidget extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(color: Colors.grey.shade400),
-                  image: const DecorationImage(
+                  image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage('assets/images/women-jacket.jpg')))),
+                      image: NetworkImage(widget.cartModel.imagePath)))),
           SizedBox(
             width: 10.w,
           ),
@@ -43,7 +53,7 @@ class CartItemWidget extends StatelessWidget {
               SizedBox(
                 width: 180.w,
                 child: Text(
-                  'Elegant wrapped dress',
+                  widget.cartModel.name,
                   style: AppTextStyles.font16RobotoBlack,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -52,7 +62,7 @@ class CartItemWidget extends StatelessWidget {
                 height: 5.h,
               ),
               Text(
-                '580 L.E',
+                '${widget.cartModel.price} L.E',
                 style: AppTextStyles.font16RobotoBlack
                     .copyWith(fontWeight: FontWeight.bold),
               ),
@@ -70,22 +80,41 @@ class CartItemWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.remove_outlined,
-                        color: Colors.white,
-                        size: 25.r,
+                      GestureDetector(
+                        onTap: () {
+                          int newQuantity = widget.cartModel.quantity - 1;
+                          newQuantity == 0
+                              ? BlocProvider.of<CartCubit>(context)
+                                  .deleteCartItem(widget.cartModel.id)
+                              : BlocProvider.of<CartCubit>(context)
+                                  .updateCartItemQuantity(
+                                      widget.cartModel.id, newQuantity);
+                        },
+                        child: Icon(
+                          Icons.remove_outlined,
+                          color: Colors.white,
+                          size: 25.r,
+                        ),
                       ),
                       const Spacer(),
                       Text(
-                        '1',
+                        widget.cartModel.quantity.toString(),
                         style: AppTextStyles.font18RobotoWhite
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
                       const Spacer(),
-                      Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 25.r,
+                      GestureDetector(
+                        onTap: () {
+                          int newQuantity = widget.cartModel.quantity + 1;
+                          BlocProvider.of<CartCubit>(context)
+                              .updateCartItemQuantity(
+                                  widget.cartModel.id, newQuantity);
+                        },
+                        child: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 25.r,
+                        ),
                       ),
                     ],
                   ),
@@ -93,10 +122,16 @@ class CartItemWidget extends StatelessWidget {
               ),
             ],
           ),
-          Icon(
-            Icons.delete_forever_rounded,
-            size: 35.r,
-            color: AppColors.pink,
+          GestureDetector(
+            onTap: () {
+              BlocProvider.of<CartCubit>(context)
+                  .deleteCartItem(widget.cartModel.id);
+            },
+            child: Icon(
+              Icons.delete_forever_rounded,
+              size: 35.r,
+              color: AppColors.pink,
+            ),
           ),
         ],
       ),
