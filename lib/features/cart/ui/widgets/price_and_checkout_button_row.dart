@@ -1,3 +1,5 @@
+import 'package:diva_shopping_app/core/helpers/extentions.dart';
+import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/shared_widgets/custom_button.dart';
@@ -50,7 +52,9 @@ class PriceAndCheckoutButtonRow extends StatelessWidget {
                   text: 'Checkout',
                   textStyle: AppTextStyles.font18RobotoWhite,
                   width: double.infinity,
-                  onTap: () {}),
+                  onTap: () {
+                    context.pushNamed(Routes.checkoutScreen);
+                  }),
             ],
           ),
         ));
