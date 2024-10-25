@@ -73,7 +73,12 @@ dependencies:
   lottie: ^3.1.2
   #A Flutter package that allows for dynamic expansion and collapse of text.
   readmore: ^3.0.0
-
+  #A Flutter plugin for integrating Google Maps in iOS and Android applications.
+  google_maps_flutter: ^2.9.0
+  #Cross-platform plugin for easy access to device's location in real-time.
+  location: ^7.0.0
+  #A Flutter Geocoding plugin which provides easy geocoding and reverse-geocoding features.
+  geocoding: ^3.0.0
 
 dev_dependencies:
   flutter_test:
