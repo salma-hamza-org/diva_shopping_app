@@ -2,6 +2,8 @@ import 'package:diva_shopping_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/routing/routes_names.dart';
+
 class CategoriesTopBar extends StatelessWidget {
   const CategoriesTopBar({super.key});
 
@@ -9,11 +11,16 @@ class CategoriesTopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: 20.0.r,
-          backgroundColor: Colors.white,
-          child: Image.asset(
-            'assets/images/arrow_back.png',
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushReplacementNamed(Routes.homePageLayout);
+          },
+          child: CircleAvatar(
+            radius: 20.0,
+            backgroundColor: Colors.white,
+            child: Image.asset(
+              'assets/images/arrow_back.png',
+            ),
           ),
         ),
         const Spacer(),
