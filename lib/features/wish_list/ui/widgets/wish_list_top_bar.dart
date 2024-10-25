@@ -1,11 +1,10 @@
+import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../core/routing/routes_names.dart';
-
-class CategoriesTopBar extends StatelessWidget {
-  const CategoriesTopBar({super.key});
+class WishListTopBar extends StatelessWidget {
+  const WishListTopBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class CategoriesTopBar extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          "Categories",
+          "Wishlist",
           style: AppTextStyles.font24RobotoBlack,
         ),
         const Spacer(),
