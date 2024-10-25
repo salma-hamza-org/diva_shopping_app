@@ -11,9 +11,6 @@ import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cub
 import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/cart/logic/cubit/cart_cubit.dart';
-import '../../features/categories/logic/cubit/category_cubit.dart';
-import '../../features/home/logic/home_cubit.dart';
 import '../../features/login_screen/ui/login_screen.dart';
 import '../../features/product_details/product_details_screen.dart';
 import '../../features/signin_screen/ui/signin_screen.dart';
@@ -78,8 +75,6 @@ class AppRouter {
                 create: (context) => getIt<CartCubit>(),
               ),
             ],
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<CartCubit>(),
             child: ProductDetailsScreen(
               productModel: args?['productModel'],
               productList: args?['productList'],

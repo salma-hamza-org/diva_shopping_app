@@ -208,7 +208,7 @@ class ItemOfProductList extends StatelessWidget {
                     style: AppTextStyles.font14RobotoBlack,
                     overflow: TextOverflow.ellipsis,
                   ),
-                ],
+                )]
               ),
             ),
             Padding(
