@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:diva_shopping_app/core/networking/dio_factory.dart';
+import 'package:diva_shopping_app/features/cart/data/repo/cart_repo.dart';
+import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:diva_shopping_app/features/categories/data/repos/category_repo.dart';
 import 'package:diva_shopping_app/features/categories/logic/cubit/category_cubit.dart';
 import 'package:diva_shopping_app/features/home/data/repos/home_repo.dart';
@@ -8,10 +10,12 @@ import 'package:diva_shopping_app/features/login_screen/data/repos/login_repo.da
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/data/repos/sign_up_repo.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
-import 'package:diva_shopping_app/features/wish_list/data/repo/favorite_repo.dart';
-import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_cubit.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../features/cart/data/repo/cart_repo.dart';
+import '../../features/cart/logic/cubit/cart_cubit.dart';
+import '../../features/wish_list/data/repo/favorite_repo.dart';
+import '../../features/wish_list/logic/cubit/favorite_cubit.dart';
 import '../networking/api_service.dart';
 
 final getIt = GetIt.instance;
@@ -41,4 +45,8 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<FavoriteRepo>(() => FavoriteRepo());
   getIt.registerFactory<FavoriteCubit>(
       () => FavoriteCubit(getIt<FavoriteRepo>()));
+
+  //cart
+  getIt.registerLazySingleton<CartRepo>(() => CartRepo());
+  getIt.registerFactory<CartCubit>(()=> CartCubit(getIt()));
 }
