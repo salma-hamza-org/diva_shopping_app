@@ -1,5 +1,6 @@
 import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
+import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:diva_shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:diva_shopping_app/features/home/ui/home_page_layout.dart';
 import 'package:diva_shopping_app/features/product_details/product_details_screen.dart';
@@ -8,6 +9,8 @@ import 'package:diva_shopping_app/features/profile_settings/ui/profile_settings.
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../features/categories/logic/cubit/category_cubit.dart';
+import '../../features/home/logic/home_cubit.dart';
 import '../../features/login_screen/ui/login_screen.dart';
 import '../../features/signin_screen/ui/signin_screen.dart';
 import '../../features/splash_screen/splash_screen.dart';
@@ -39,14 +42,32 @@ class AppRouter {
 
       case Routes.homePageLayout:
         return MaterialPageRoute(
-          builder: (_) => const HomePageLayout(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<HomeCubit>()..getAllProducts(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<CategoryCubit>()
+                  ..getCategoriesList()
+                  ..getCategoryProducts('electronics'),
+              ),
+              BlocProvider(
+                create: (context) => getIt<CartCubit>()..getAllCartItems(),
+              ),
+            ],
+            child: const HomePageLayout(),
+          ),
         );
 
       case Routes.productDetailsScreen:
         return MaterialPageRoute(
-          builder: (_) => ProductDetailsScreen(
-            productModel: args?['productModel'],
-            productList: args?['productList'],
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CartCubit>(),
+            child: ProductDetailsScreen(
+              productModel: args?['productModel'],
+              productList: args?['productList'],
+            ),
           ),
         );
       case Routes.profileSettingsScreen:
