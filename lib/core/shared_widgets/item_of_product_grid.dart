@@ -148,6 +148,65 @@ class ItemOfProductList extends StatelessWidget {
                   Text(
                     productModel?.rating?.rate.toString() ?? '4.9',
                     style: AppTextStyles.font12RobotoGrey,
+                ),
+                BlocBuilder<CartCubit, CartStates>(
+                  builder: (context, state) {
+                    final isInCart = state.maybeWhen(
+                      success: (cartItems) => cartItems.any((items) =>
+                          items.id == productModel?.id.toString()),
+                      failure: (_) => false,
+                      orElse: () => false,
+                    );
+
+                    return Align(
+                      alignment: AlignmentDirectional.bottomEnd,
+                      child: Padding(
+                        padding: EdgeInsets.only(bottom: 5.h, right: 5.w),
+                        child: GestureDetector(
+                          onTap: () {
+                            if (isInCart) {
+                              context.read<CartCubit>().deleteCartItem(
+                                  productModel?.id.toString() ?? '');
+                            } else {
+                              context.read<CartCubit>().addOrUpdateCartItem(
+                                  CartModel(
+                                      id: productModel?.id.toString() ??
+                                          '',
+                                      name: productModel?.title ?? '',
+                                      price: productModel?.price ?? 0,
+                                      quantity: 1,
+                                      imagePath:
+                                          productModel?.image ?? ''));
+                            }
+                          },
+                          child: CircleAvatar(
+                            radius: 18.r,
+                            backgroundColor:
+                                isInCart ? Colors.black : Colors.white,
+                            child: Icon(
+                              Icons.shopping_cart_rounded,
+                              size: 20.sp,
+                              color: isInCart ? Colors.white : Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 8.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Text(
+                    productModel?.title ?? 'name',
+                    style: AppTextStyles.font14RobotoBlack,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),

@@ -2,6 +2,7 @@ import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
 import 'package:diva_shopping_app/features/categories/logic/cubit/category_cubit.dart';
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
+import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:diva_shopping_app/features/checkout/ui/checkout_screen.dart';
 import 'package:diva_shopping_app/features/home/ui/home_page_layout.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
@@ -11,6 +12,8 @@ import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_cubit.
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/cart/logic/cubit/cart_cubit.dart';
+import '../../features/categories/logic/cubit/category_cubit.dart';
+import '../../features/home/logic/home_cubit.dart';
 import '../../features/login_screen/ui/login_screen.dart';
 import '../../features/product_details/product_details_screen.dart';
 import '../../features/signin_screen/ui/signin_screen.dart';
@@ -75,13 +78,14 @@ class AppRouter {
                 create: (context) => getIt<CartCubit>(),
               ),
             ],
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<CartCubit>(),
             child: ProductDetailsScreen(
               productModel: args?['productModel'],
               productList: args?['productList'],
             ),
           ),
         );
-
       case Routes.profileSettingsScreen:
         return MaterialPageRoute(
           builder: (_) => const ProfileSettings(),
