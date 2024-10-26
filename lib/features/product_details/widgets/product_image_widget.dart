@@ -10,7 +10,8 @@ class ProductImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey.shade300,
+        color: Colors.white,
+        // color: Colors.grey.shade300,
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Image.network(
