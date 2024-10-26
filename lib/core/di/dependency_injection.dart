@@ -8,12 +8,12 @@ import 'package:diva_shopping_app/features/home/data/repos/home_repo.dart';
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
 import 'package:diva_shopping_app/features/login_screen/data/repos/login_repo.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
+import 'package:diva_shopping_app/features/payment/data/repo/payment_service.dart';
+import 'package:diva_shopping_app/features/payment/logic/payment_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/data/repos/sign_up_repo.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../features/cart/data/repo/cart_repo.dart';
-import '../../features/cart/logic/cubit/cart_cubit.dart';
 import '../../features/wish_list/data/repo/favorite_repo.dart';
 import '../../features/wish_list/logic/cubit/favorite_cubit.dart';
 import '../networking/api_service.dart';
@@ -48,5 +48,9 @@ Future<void> setupGetIt() async {
 
   //cart
   getIt.registerLazySingleton<CartRepo>(() => CartRepo());
-  getIt.registerFactory<CartCubit>(()=> CartCubit(getIt()));
+  getIt.registerFactory<CartCubit>(() => CartCubit(getIt()));
+
+  //payment
+  getIt.registerLazySingleton<PaymentService>(() => PaymentService(dio: dio));
+  getIt.registerFactory<PaymentCubit>(() => PaymentCubit(getIt(), getIt()));
 }

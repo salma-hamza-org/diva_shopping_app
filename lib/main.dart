@@ -4,7 +4,7 @@ import 'package:diva_shopping_app/features/cart/data/model/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'core/helpers/constants.dart';
@@ -20,7 +20,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(CartModelAdapter());
   await setupGetIt();
-
+  Stripe.publishableKey = stripePublishableKey;
 
   runApp(DivaApp(
     appRouter: AppRouter(),

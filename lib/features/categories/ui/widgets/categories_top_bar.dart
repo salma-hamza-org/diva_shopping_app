@@ -1,11 +1,9 @@
-import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
-import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/routing/routes_names.dart';
+import '../../../cart/ui/widgets/cart_icon_builder.dart';
 
 class CategoriesTopBar extends StatelessWidget {
   const CategoriesTopBar({super.key});
@@ -44,16 +42,7 @@ class CategoriesTopBar extends StatelessWidget {
                 ),
               ),
             ),
-            CircleAvatar(
-              radius: 8.r,
-              backgroundColor: AppColors.red,
-              child: Center(
-                child: Text(BlocProvider.of<CartCubit>(context)
-                    .cartItems
-                    .length
-                    .toString(),style: AppTextStyles.font12RobotoBlack.copyWith(color: Colors.white),),
-              ),
-            ),
+            const CartIconBuilder(),
           ],
         ),
       ],
