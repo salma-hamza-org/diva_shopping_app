@@ -1,9 +1,12 @@
+import 'package:diva_shopping_app/core/helpers/extentions.dart';
+import 'package:diva_shopping_app/features/cart/data/model/cart_model.dart';
 import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_cubit.dart';
 import 'package:diva_shopping_app/features/wish_list/logic/cubit/favorite_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/routing/routes_names.dart';
 import '../../../core/shared_widgets/custom_button.dart';
 import '../../../core/theming/text_styles.dart';
 import '../../home/data/models/product_model.dart';
@@ -77,7 +80,19 @@ class ButtonsRow extends StatelessWidget {
                   text: 'Buy now',
                   textStyle: AppTextStyles.font18RobotoWhite,
                   width: 160.w,
-                  onTap: () {},
+                  onTap: () {
+                    context.pushNamed(Routes.checkoutScreen, arguments: {
+                      'cartModel': [
+                        CartModel(
+                            id: productModel?.id.toString() ?? '',
+                            name: productModel?.title ?? '',
+                            price: productModel?.price ?? 0,
+                            quantity: 1,
+                            imagePath: productModel?.image ?? '')
+                      ],
+                      'isFromCart': false
+                    });
+                  },
                 ),
                 const Spacer(),
                 Container(

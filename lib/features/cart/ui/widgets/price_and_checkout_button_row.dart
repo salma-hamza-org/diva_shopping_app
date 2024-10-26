@@ -1,13 +1,15 @@
 import 'package:diva_shopping_app/core/helpers/extentions.dart';
 import 'package:diva_shopping_app/core/routing/routes_names.dart';
+import 'package:diva_shopping_app/features/cart/logic/cubit/cart_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/shared_widgets/custom_button.dart';
 import '../../../../core/theming/text_styles.dart';
 
 class PriceAndCheckoutButtonRow extends StatelessWidget {
   String totalPrice;
-
 
   PriceAndCheckoutButtonRow(this.totalPrice);
 
@@ -56,7 +58,11 @@ class PriceAndCheckoutButtonRow extends StatelessWidget {
                   textStyle: AppTextStyles.font18RobotoWhite,
                   width: double.infinity,
                   onTap: () {
-                    context.pushNamed(Routes.checkoutScreen);
+                    context.pushNamed(Routes.checkoutScreen, arguments: {
+                      'cartModel':
+                          BlocProvider.of<CartCubit>(context).cartItems,
+                      'isFromCart': true
+                    });
                   }),
             ],
           ),

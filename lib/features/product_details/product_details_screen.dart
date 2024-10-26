@@ -52,10 +52,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 16.h),
-              child: ButtonsRow(productModel: productModel),
-            ),
+            ButtonsRow(productModel: productModel),
           ],
         ),
       ),

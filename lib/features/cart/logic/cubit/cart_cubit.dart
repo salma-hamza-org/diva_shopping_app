@@ -11,8 +11,8 @@ class CartCubit extends Cubit<CartStates> {
   List<CartModel> cartItems=[];
 
   Future<void> getAllCartItems() async {
+    emit(const CartStates.loading());
     try {
-      emit(const CartStates.loading());
       cartItems = await cartRepo.getAllCartItems();
       calculateTotalPrice(cartItems);
       emit(CartStates.success(cartItems));
@@ -61,6 +61,7 @@ class CartCubit extends Cubit<CartStates> {
     try {
       emit(const CartStates.loading());
       await cartRepo.clearCart();
+      await cartRepo.getAllCartItems();
       emit(const CartStates.success([])); // Emit empty cart after clearing
     } catch (e) {
       emit(const CartStates.failure('Failed to clear cart'));
