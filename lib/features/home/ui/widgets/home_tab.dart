@@ -1,4 +1,3 @@
-import 'package:diva_shopping_app/core/helpers/spacing.dart';
 import 'package:diva_shopping_app/features/home/logic/home_cubit.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/all_product_bloc_builder.dart';
 import 'package:diva_shopping_app/features/home/ui/widgets/home_top_bar.dart';
@@ -27,17 +26,34 @@ class HomeTab extends StatelessWidget {
                 20.w,
                 0.h,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const HomeTopBar(),
-                  const SearchBarAndFilteration(),
-                  const ListOfSales(),
-                  const ListOfCategories(),
-                  verticalSpace(10),
-                  const AllProductBlocBuilder(),
+              child:  const CustomScrollView(
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        HomeTopBar(),
+                        SearchBarAndFilteration(),
+                        ListOfSales(),
+                        ListOfCategories(),
+                      ],
+                    )
+                  ),
+                  SliverFillRemaining(
+                    child: AllProductBlocBuilder(),
+                  ),
                 ],
               ),
+              // child: Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     const HomeTopBar(),
+              //     const SearchBarAndFilteration(),
+              //     const ListOfSales(),
+              //     const ListOfCategories(),
+              //     verticalSpace(10),
+              //     const AllProductBlocBuilder(),
+              //   ],
+              // ),
             ),
           ),
         );
