@@ -1,4 +1,3 @@
-import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
 import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
@@ -57,14 +56,14 @@ class ItemOfProductList extends StatelessWidget {
                           child: CircleAvatar(
                             radius: 18.r,
                             backgroundColor: Colors.white,
-                            child: IconButton(
-                              icon: Icon(
+                            child: GestureDetector(
+                              child: Icon(
                                 isFavorite
                                     ? Icons.favorite
                                     : Icons.favorite_border,
                                 color: isFavorite ? Colors.red : Colors.grey,
                               ),
-                              onPressed: () {
+                              onTap: () {
                                 if (isFavorite) {
                                   context
                                       .read<FavoriteCubit>()
