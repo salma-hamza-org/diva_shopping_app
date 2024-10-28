@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/text_styles.dart';
@@ -14,16 +15,21 @@ class WishListIsEmpty extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          verticalSpace(250),
+          verticalSpace(200),
           const Icon(
             Icons.favorite_border,
-            color: Colors.grey,
-            size: 50.0,
+            color: Colors.black,
+            size: 150.0,
+          ),
+          SizedBox(
+            height: 20.h,
           ),
           Text(
-            "Wishlist Is Empty",
-            style: AppTextStyles.font22RobotoBlack,
-          ),
+            'No Items !',
+            style: AppTextStyles.font24LibreBaskervilleBlack
+                .copyWith(fontSize: 28.sp),
+            textAlign: TextAlign.center,
+          )
         ],
       ),
     );
