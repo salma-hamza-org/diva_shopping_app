@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656374206390",
+    "project_id": "diva-shopping-app",
+    "storage_bucket": "diva-shopping-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656374206390:android:ea4b74ddedd1805bfb3b17",
+        "android_client_info": {
+          "package_name": "com.example.diva_shopping_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeDTrW4y66S2MT3DoMwWzSuPb3yinRLyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

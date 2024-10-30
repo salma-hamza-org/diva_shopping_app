@@ -65,6 +65,9 @@ dependencies:
   shared_preferences: ^2.2.3
   # provides API to store data in secure storage.
   flutter_secure_storage: ^9.2.2
+  # for firebase service
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
   # easy way to add shimmer effect.
   shimmer: ^3.0.0
   #A Flutter package to use fonts from fonts.google.com.

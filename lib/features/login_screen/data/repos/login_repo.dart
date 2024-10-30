@@ -1,21 +1,15 @@
-import 'package:diva_shopping_app/core/networking/api_error_handler.dart';
-import 'package:diva_shopping_app/core/networking/api_result.dart';
-import 'package:diva_shopping_app/core/networking/api_service.dart';
-import 'package:diva_shopping_app/features/login_screen/data/models/login_request_body.dart';
-import 'package:diva_shopping_app/features/login_screen/data/models/login_response.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginRepo {
-  final ApiService _apiService;
+  final FirebaseAuth _firebaseAuth;
 
-  LoginRepo(this._apiService);
+  LoginRepo({FirebaseAuth? firebaseAuth})
+      : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
-  Future<ApiResult<LoginResponse>> login(
-      LoginRequestBody loginRequestBody) async {
-    try {
-      final response = await _apiService.login(loginRequestBody);
-      return ApiResult.success(response);
-    } catch (error) {
-      return ApiResult.failure(ErrorHandler.handle(error));
-    }
+  Future<UserCredential> login(String email, String password) async {
+    return await _firebaseAuth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
   }
 }

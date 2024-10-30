@@ -19,15 +19,15 @@ class SignInScreen extends StatelessWidget {
       backgroundColor: AppColors.lighterGray,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SignupTextAndImage(),
-                verticalSpace(20),
+                verticalSpace(15),
                 const SignupForm(),
-                verticalSpace(40),
+                verticalSpace(15),
                 AppTextButton(
                     buttonText: "Sign Up",
                     textStyle: AppTextStyles.font18RobotoWhite,
