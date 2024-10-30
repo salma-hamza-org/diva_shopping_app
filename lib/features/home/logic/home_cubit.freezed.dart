@@ -24,7 +24,6 @@ mixin _$HomeState {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,7 +34,6 @@ mixin _$HomeState {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,7 +44,6 @@ mixin _$HomeState {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,7 +56,6 @@ mixin _$HomeState {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,7 +65,6 @@ mixin _$HomeState {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,7 +74,6 @@ mixin _$HomeState {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -152,7 +146,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) {
     return initial();
   }
@@ -166,7 +159,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) {
     return initial?.call();
   }
@@ -180,7 +172,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -199,7 +190,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) {
     return initial(this);
   }
@@ -212,7 +202,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) {
     return initial?.call(this);
   }
@@ -225,7 +214,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -313,7 +301,6 @@ class _$TabChangedImpl implements TabChanged {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) {
     return tabChanged(index);
   }
@@ -327,7 +314,6 @@ class _$TabChangedImpl implements TabChanged {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) {
     return tabChanged?.call(index);
   }
@@ -341,7 +327,6 @@ class _$TabChangedImpl implements TabChanged {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (tabChanged != null) {
@@ -360,7 +345,6 @@ class _$TabChangedImpl implements TabChanged {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) {
     return tabChanged(this);
   }
@@ -373,7 +357,6 @@ class _$TabChangedImpl implements TabChanged {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) {
     return tabChanged?.call(this);
   }
@@ -386,7 +369,6 @@ class _$TabChangedImpl implements TabChanged {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (tabChanged != null) {
@@ -457,7 +439,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) {
     return getAllProductsLoading();
   }
@@ -471,7 +452,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) {
     return getAllProductsLoading?.call();
   }
@@ -485,7 +465,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsLoading != null) {
@@ -504,7 +483,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) {
     return getAllProductsLoading(this);
   }
@@ -517,7 +495,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) {
     return getAllProductsLoading?.call(this);
   }
@@ -530,7 +507,6 @@ class _$GetAllProductsLoadingImpl implements GetAllProductsLoading {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsLoading != null) {
@@ -631,7 +607,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) {
     return getAllProductsSuccess(productModelList);
   }
@@ -645,7 +620,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) {
     return getAllProductsSuccess?.call(productModelList);
   }
@@ -659,7 +633,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsSuccess != null) {
@@ -678,7 +651,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) {
     return getAllProductsSuccess(this);
   }
@@ -691,7 +663,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) {
     return getAllProductsSuccess?.call(this);
   }
@@ -704,7 +675,6 @@ class _$GetAllProductsSuccessImpl implements GetAllProductsSuccess {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsSuccess != null) {
@@ -803,7 +773,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     required TResult Function(List<ProductModel?>? productModelList)
         getAllProductsSuccess,
     required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
   }) {
     return getAllProductsError(error);
   }
@@ -817,7 +786,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     TResult? Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
   }) {
     return getAllProductsError?.call(error);
   }
@@ -831,7 +799,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     TResult Function(List<ProductModel?>? productModelList)?
         getAllProductsSuccess,
     TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsError != null) {
@@ -850,7 +817,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     required TResult Function(GetAllProductsSuccess value)
         getAllProductsSuccess,
     required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
   }) {
     return getAllProductsError(this);
   }
@@ -863,7 +829,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
   }) {
     return getAllProductsError?.call(this);
   }
@@ -876,7 +841,6 @@ class _$GetAllProductsErrorImpl implements GetAllProductsError {
     TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
     TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
     TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
     required TResult orElse(),
   }) {
     if (getAllProductsError != null) {
@@ -897,138 +861,4 @@ abstract class GetAllProductsError implements HomeState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetAllProductsErrorImplCopyWith<_$GetAllProductsErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ResetCategoryIndexImplCopyWith<$Res> {
-  factory _$$ResetCategoryIndexImplCopyWith(_$ResetCategoryIndexImpl value,
-          $Res Function(_$ResetCategoryIndexImpl) then) =
-      __$$ResetCategoryIndexImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ResetCategoryIndexImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ResetCategoryIndexImpl>
-    implements _$$ResetCategoryIndexImplCopyWith<$Res> {
-  __$$ResetCategoryIndexImplCopyWithImpl(_$ResetCategoryIndexImpl _value,
-      $Res Function(_$ResetCategoryIndexImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HomeState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ResetCategoryIndexImpl implements ResetCategoryIndex {
-  const _$ResetCategoryIndexImpl();
-
-  @override
-  String toString() {
-    return 'HomeState.resetCategoryIndex()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ResetCategoryIndexImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(int index) tabChanged,
-    required TResult Function() getAllProductsLoading,
-    required TResult Function(List<ProductModel?>? productModelList)
-        getAllProductsSuccess,
-    required TResult Function(String error) getAllProductsError,
-    required TResult Function() resetCategoryIndex,
-  }) {
-    return resetCategoryIndex();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(int index)? tabChanged,
-    TResult? Function()? getAllProductsLoading,
-    TResult? Function(List<ProductModel?>? productModelList)?
-        getAllProductsSuccess,
-    TResult? Function(String error)? getAllProductsError,
-    TResult? Function()? resetCategoryIndex,
-  }) {
-    return resetCategoryIndex?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(int index)? tabChanged,
-    TResult Function()? getAllProductsLoading,
-    TResult Function(List<ProductModel?>? productModelList)?
-        getAllProductsSuccess,
-    TResult Function(String error)? getAllProductsError,
-    TResult Function()? resetCategoryIndex,
-    required TResult orElse(),
-  }) {
-    if (resetCategoryIndex != null) {
-      return resetCategoryIndex();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(TabChanged value) tabChanged,
-    required TResult Function(GetAllProductsLoading value)
-        getAllProductsLoading,
-    required TResult Function(GetAllProductsSuccess value)
-        getAllProductsSuccess,
-    required TResult Function(GetAllProductsError value) getAllProductsError,
-    required TResult Function(ResetCategoryIndex value) resetCategoryIndex,
-  }) {
-    return resetCategoryIndex(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(TabChanged value)? tabChanged,
-    TResult? Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult? Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult? Function(GetAllProductsError value)? getAllProductsError,
-    TResult? Function(ResetCategoryIndex value)? resetCategoryIndex,
-  }) {
-    return resetCategoryIndex?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(TabChanged value)? tabChanged,
-    TResult Function(GetAllProductsLoading value)? getAllProductsLoading,
-    TResult Function(GetAllProductsSuccess value)? getAllProductsSuccess,
-    TResult Function(GetAllProductsError value)? getAllProductsError,
-    TResult Function(ResetCategoryIndex value)? resetCategoryIndex,
-    required TResult orElse(),
-  }) {
-    if (resetCategoryIndex != null) {
-      return resetCategoryIndex(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ResetCategoryIndex implements HomeState {
-  const factory ResetCategoryIndex() = _$ResetCategoryIndexImpl;
 }

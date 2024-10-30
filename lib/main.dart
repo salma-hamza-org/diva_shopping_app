@@ -1,6 +1,7 @@
 import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/helpers/bloc_observer.dart';
 import 'package:diva_shopping_app/features/cart/data/model/cart_model.dart';
+import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,6 +20,8 @@ void main() async {
   await checkIfLoggedInUser();
   await Hive.initFlutter();
   Hive.registerAdapter(CartModelAdapter());
+  Hive.registerAdapter(ProductModelAdapter());
+  Hive.registerAdapter(RatingAdapter());
   await setupGetIt();
   Stripe.publishableKey = stripePublishableKey;
 

@@ -9,44 +9,40 @@ class FavoriteCubit extends Cubit<FavoriteState> {
 
   FavoriteCubit(this.favoriteRepository) : super(const FavoriteState.initial());
 
+  List<ProductModel> favoritesList = [];
+
   Future<void> loadFavorites() async {
     try {
-      final favorites = await favoriteRepository.getFavorites();
-      emit(FavoriteState.success(favorites));
+      favoritesList = await favoriteRepository.getFavorites();
+      emit(FavoriteState.success(favoritesList));
     } catch (e) {
-      emit(const FavoriteState.failure('Failed to load favorites'));
+      emit(FavoriteState.failure('Failed to load favorites: ${e.toString()}'));
     }
   }
 
   Future<void> addToFavorites(ProductModel product) async {
     try {
-      await favoriteRepository.addFavorite(product);
-      final currentState = state;
-      if (currentState is FavoriteSuccess) {
-        emit(FavoriteState.success([...currentState.favorites, product]));
+      // Prevent adding duplicates
+      if (await favoriteRepository.isFavorite(product)) {
+        await favoriteRepository
+            .removeFavorite(product); // Prevent adding duplicates
       } else {
-        emit(FavoriteState.success([product]));
+        await favoriteRepository.addFavorite(product);
       }
+      await loadFavorites(); // Reload the favorites after adding
     } catch (e) {
-      emit(const FavoriteState.failure('Failed to add to favorites'));
+      emit(
+          FavoriteState.failure('Failed to add to favorites: ${e.toString()}'));
     }
   }
 
   Future<void> removeFromFavorites(ProductModel product) async {
     try {
       await favoriteRepository.removeFavorite(product);
-      final currentState = state;
-      if (currentState is FavoriteSuccess) {
-        emit(FavoriteState.success(
-          currentState.favorites.where((p) => p!.id != product.id!).toList(),
-        ));
-      }
+      await loadFavorites(); // Reload the favorites after removal
     } catch (e) {
-      emit(const FavoriteState.failure('Failed to remove from favorites'));
+      emit(FavoriteState.failure(
+          'Failed to remove from favorites: ${e.toString()}'));
     }
-  }
-
-  Future<void> initializeFavorites() async {
-    await loadFavorites();
   }
 }
