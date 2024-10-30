@@ -42,8 +42,8 @@ class ItemOfProductList extends StatelessWidget {
                   BlocBuilder<FavoriteCubit, FavoriteState>(
                     builder: (context, state) {
                       final isFavorite = state.maybeWhen(
-                        success: (favorites) =>
-                            favorites.contains(productModel),
+                        success: (favoriteItems) => favoriteItems
+                            .any((items) => items?.id == productModel?.id),
                         failure: (message) {
                           return false;
                         },

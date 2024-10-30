@@ -62,17 +62,7 @@ class ButtonsRow extends StatelessWidget {
                       color: isFavorite ? Colors.red : Colors.black,
                       size: 30.r,
                     ),
-                    onPressed: () {
-                      if (isFavorite) {
-                        context
-                            .read<FavoriteCubit>()
-                            .removeFromFavorites(productModel!);
-                      } else {
-                        context
-                            .read<FavoriteCubit>()
-                            .addToFavorites(productModel!);
-                      }
-                    },
+                    onPressed: () {},
                   ),
                 ),
                 const Spacer(),
