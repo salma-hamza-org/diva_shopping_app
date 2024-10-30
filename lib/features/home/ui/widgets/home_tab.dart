@@ -26,34 +26,16 @@ class HomeTab extends StatelessWidget {
                 20.w,
                 0.h,
               ),
-              child:  const CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: Column(
-                      children: [
-                        HomeTopBar(),
-                        SearchBarAndFilteration(),
-                        ListOfSales(),
-                        ListOfCategories(),
-                      ],
-                    )
-                  ),
-                  SliverFillRemaining(
-                    child: AllProductBlocBuilder(),
-                  ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeTopBar(),
+                  SearchBarAndFiltration(),
+                  ListOfSales(),
+                  ListOfCategories(),
+                  AllProductBlocBuilder(),
                 ],
               ),
-              // child: Column(
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     const HomeTopBar(),
-              //     const SearchBarAndFilteration(),
-              //     const ListOfSales(),
-              //     const ListOfCategories(),
-              //     verticalSpace(10),
-              //     const AllProductBlocBuilder(),
-              //   ],
-              // ),
             ),
           ),
         );

@@ -1,13 +1,16 @@
 import 'package:diva_shopping_app/core/helpers/spacing.dart';
-import 'package:diva_shopping_app/core/shared_widgets/custom_text_form_field.dart';
 import 'package:diva_shopping_app/core/theming/colors.dart';
 import 'package:diva_shopping_app/core/theming/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SearchBarAndFilteration extends StatelessWidget{
-  const SearchBarAndFilteration({super.key});
+import '../../logic/home_cubit.dart';
 
+class SearchBarAndFiltration extends StatelessWidget {
+  const SearchBarAndFiltration({super.key});
+
+//filtration
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,14 +19,40 @@ class SearchBarAndFilteration extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
-            child: CustomTextFormField(
-              hintText: 'Search here',
-              textStyle: AppTextStyles.font14RobotoBlack.copyWith(color: Colors.grey.shade600),
-              prefixIcon:Icon(
-                Icons.search,
-                color: AppColors.pink,
-                size: 26.sp,
+            child: TextFormField(
+              decoration: InputDecoration(
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 15.h, horizontal: 18.w),
+                isDense: true,
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      const BorderSide(color: AppColors.grey, width: 1.5),
+                  borderRadius: BorderRadius.circular(25.r),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: AppColors.pink, width: 2),
+                  borderRadius: BorderRadius.circular(25.r),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: AppColors.red, width: 2),
+                  borderRadius: BorderRadius.circular(25.r),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: AppColors.red, width: 2),
+                  borderRadius: BorderRadius.circular(25.r),
+                ),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: AppColors.pink,
+                  size: 26.r,
+                ),
+                hintText: 'Search here',
+                hintStyle: AppTextStyles.font14RobotoBlack
+                    .copyWith(color: Colors.grey.shade600),
               ),
+              onChanged: (query) {
+                context.read<HomeCubit>().searchProducts(query);
+              },
             ),
           ),
           horizontalSpace(16),
