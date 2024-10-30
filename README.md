@@ -18,12 +18,14 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
 
 ## Technologies Used 👩‍💻
 
-- 🚀 **Flutter**: For cross-platform mobile app development.
-- 🦄 **Dart**: The programming language used to build the app.
-- 🌐 **REST APIs**: To fetch real-time medical data.
-- 🔑 **Flutter Secure Storage Package**: To securely store sensitive user information, such as login credentials and payment details.
-- 💾 **Shared Preferences Package**: To save user preferences like favorite items, filters, and browsing history for a personalized experience.
-- 📀 **Hive Package**: Used for efficient cart CRUD operations to manage user-selected items.
+- 🚀 Flutter: For cross-platform mobile app development.
+- 🔷 Dart: The programming language used to build the app.
+- 🌐 REST APIs: To fetch real-time medical data.
+- 🔑 Firebase Authentication: For secure user login and signup management.
+- 🔐 Flutter Secure Storage Package: To securely store sensitive user information, such as payment details.
+- 💾 Shared Preferences Package: Now used exclusively for storing the user token.
+- 📀 Hive Package: Used for efficient management of user-selected items in the cart and wishlist.
+
 
 
 ### Figma Design Link : https://www.figma.com/design/Uis9plodebw2P775jRNt5v/Diva-Shopping-app?node-id=194-611&t=rWMP5ysDJAGLajgT-1 
@@ -33,7 +35,7 @@ Diva is your go-to app for discovering stylish and trendy clothing, offering a s
 ## App UI 📱 
 
 ![1](https://github.com/user-attachments/assets/90f35bc0-e98a-4db1-b4dc-1e33f494687d)
-![2](https://github.com/user-attachments/assets/bbab2d45-891b-4913-a902-c40313b476ce)
+![2](https://github.com/user-attachments/assets/31d0bd3b-5cf9-46dd-a5d6-f0d19ffb9a65)
 ![3](https://github.com/user-attachments/assets/37cef7c6-684f-4a9b-93c1-27c5da7d745a)
 ![4](https://github.com/user-attachments/assets/3bb8e70b-8004-49e6-8fa0-d58337e4fe9a)
 ![5](https://github.com/user-attachments/assets/7ff7c057-1a67-4d90-a3ee-3d26cbcbff4b)
