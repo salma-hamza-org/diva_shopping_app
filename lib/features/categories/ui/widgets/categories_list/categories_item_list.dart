@@ -42,7 +42,7 @@ class CategoriesItemList extends StatelessWidget {
         child: Column(
           children: [
             CircleAvatar(
-              radius: isSelected ? 35.0.r : 30.0.r,
+              radius: isSelected ? 34.0.r : 30.0.r,
               backgroundColor: AppColors.lightPink,
               child: Image.asset(
                 height: 40.h,
