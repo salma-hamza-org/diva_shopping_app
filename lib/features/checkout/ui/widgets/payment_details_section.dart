@@ -34,7 +34,7 @@ class PaymentDetailsSection extends StatelessWidget {
                   style: AppTextStyles.font15DarkGreyMedium,
                 ),
                 Text(
-                  '${BlocProvider.of<CartCubit>(context).calculateTotalPrice(cartModel)} L.E',
+                  '${BlocProvider.of<CartCubit>(context).calculateTotalPrice(cartModel).toStringAsFixed(2)} L.E',
                   style: AppTextStyles.font15DarkGreyMedium,
                 ),
               ],

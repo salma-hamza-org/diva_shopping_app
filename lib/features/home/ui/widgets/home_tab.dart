@@ -26,7 +26,7 @@ class HomeTab extends StatelessWidget {
                 20.w,
                 0.h,
               ),
-              child: const Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   HomeTopBar(),

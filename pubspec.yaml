@@ -87,6 +87,8 @@ dependencies:
   hive: ^2.2.3
   #Flutter library for Stripe. Supports PaymentSheets, Apple & Google Pay, SCA, PSD2 and much more.
   flutter_stripe: ^11.2.0
+  #A carousel slider widget, support infinite scroll and custom child widget.
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
