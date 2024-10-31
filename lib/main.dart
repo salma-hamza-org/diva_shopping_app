@@ -2,6 +2,7 @@ import 'package:diva_shopping_app/core/di/dependency_injection.dart';
 import 'package:diva_shopping_app/core/helpers/bloc_observer.dart';
 import 'package:diva_shopping_app/features/cart/data/model/cart_model.dart';
 import 'package:diva_shopping_app/features/home/data/models/product_model.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = MyBlocObserver();
+  await Firebase.initializeApp();
   await checkIfLoggedInUser();
   await Hive.initFlutter();
   Hive.registerAdapter(CartModelAdapter());

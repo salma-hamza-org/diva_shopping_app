@@ -3,6 +3,7 @@ import 'package:diva_shopping_app/core/shared_widgets/app_text_form_field.dart';
 import 'package:diva_shopping_app/features/login_screen/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EmailAndPasswoed extends StatefulWidget {
   const EmailAndPasswoed({super.key});
@@ -33,15 +34,15 @@ class _EmailAndPasswoedState extends State<EmailAndPasswoed> {
         child: Column(
           children: [
             AppTextFormField(
-              hintText: "User Name",
+              hintText: "E-mail",
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a valid user name';
+                  return 'field musn\'t be empty';
                 }
               },
-              controller: context.read<LoginCubit>().userNameController,
+              controller: context.read<LoginCubit>().emailController,
             ),
-            verticalSpace(18),
+            verticalSpace(10),
             AppTextFormField(
               controller: context.read<LoginCubit>().passwordController,
               hintText: "Password",
@@ -53,11 +54,13 @@ class _EmailAndPasswoedState extends State<EmailAndPasswoed> {
                   });
                 },
                 child: Icon(
-                    isObscureText ? Icons.visibility : Icons.visibility_off),
+                  isObscureText ? Icons.visibility : Icons.visibility_off,
+                  size: 20.r,
+                ),
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a valid password';
+                  return 'field musn\'t be empty';
                 }
               },
             ),

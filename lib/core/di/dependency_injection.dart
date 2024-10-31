@@ -12,6 +12,7 @@ import 'package:diva_shopping_app/features/payment/data/repo/payment_service.dar
 import 'package:diva_shopping_app/features/payment/logic/payment_cubit.dart';
 import 'package:diva_shopping_app/features/signin_screen/data/repos/sign_up_repo.dart';
 import 'package:diva_shopping_app/features/signin_screen/logic/cubit/sign_up_cubit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../features/wish_list/data/repo/favorite_repo.dart';
@@ -25,12 +26,17 @@ Future<void> setupGetIt() async {
   Dio dio = DioFactory.getDio();
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
+  //firebase service
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   // login
-  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerLazySingleton<LoginRepo>(
+      () => LoginRepo(firebaseAuth: firebaseAuth));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
   // signup
-  getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
+  getIt.registerLazySingleton<SignupRepo>(
+      () => SignupRepo(firebaseAuth: firebaseAuth));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
 
   // home

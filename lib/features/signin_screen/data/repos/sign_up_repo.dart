@@ -1,21 +1,15 @@
-import '../../../../core/networking/api_error_handler.dart';
-import '../../../../core/networking/api_result.dart';
-import '../../../../core/networking/api_service.dart';
-import '../models/sign_up_request_body.dart';
-import '../models/sign_up_response.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupRepo {
-  final ApiService _apiService;
+  final FirebaseAuth _firebaseAuth;
 
-  SignupRepo(this._apiService);
+  SignupRepo({FirebaseAuth? firebaseAuth})
+      : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
-  Future<ApiResult<SignupResponse>> signup(
-      SignupRequestBody signupRequestBody) async {
-    try {
-      final response = await _apiService.signup(signupRequestBody);
-      return ApiResult.success(response);
-    } catch (errro) {
-      return ApiResult.failure(ErrorHandler.handle(errro));
-    }
+  Future<UserCredential> signUp(String email, String password) async {
+    return await _firebaseAuth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
   }
 }
