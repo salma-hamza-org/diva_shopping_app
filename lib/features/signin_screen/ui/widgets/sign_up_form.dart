@@ -1,6 +1,7 @@
 import 'package:diva_shopping_app/features/signin_screen/ui/widgets/password_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -22,19 +23,13 @@ class _SignupFormState extends State<SignupForm> {
   bool hasNumber = false;
   bool hasMinLength = false;
   late TextEditingController passwordController;
-  final FocusNode passwordFocusNode = FocusNode();
-  bool showPasswordValidations = false;
 
   @override
   void initState() {
     super.initState();
     passwordController = context.read<SignupCubit>().passwordController;
     setupPasswordControllerListener();
-    passwordFocusNode.addListener(() {
-      setState(() {
-        showPasswordValidations = passwordFocusNode.hasFocus;
-      });
-    });
+    ;
   }
 
   void setupPasswordControllerListener() {
@@ -57,57 +52,15 @@ class _SignupFormState extends State<SignupForm> {
       child: Column(
         children: [
           AppTextFormField(
-            hintText: 'First Name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid first name';
-              }
-            },
-            controller: context.read<SignupCubit>().firstnameController,
-          ),
-          verticalSpace(18),
-          AppTextFormField(
-            hintText: 'Last Name',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid last name';
-              }
-            },
-            controller: context.read<SignupCubit>().lastnameController,
-          ),
-          verticalSpace(18),
-          AppTextFormField(
-            hintText: 'Username',
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter a valid username';
-              }
-            },
-            controller: context.read<SignupCubit>().userNameController,
-          ),
-          verticalSpace(18),
-          AppTextFormField(
-            hintText: 'Phone Number',
-            validator: (value) {
-              if (value == null ||
-                  value.isEmpty ||
-                  !AppRegex.isPhoneNumberValid(value)) {
-                return 'Please enter a valid phone number';
-              }
-            },
-            controller: context.read<SignupCubit>().phoneController,
-          ),
-          verticalSpace(18),
-          AppTextFormField(
             hintText: 'Email',
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid email';
+                return 'field musn\'t be empty';
               }
             },
             controller: context.read<SignupCubit>().emailController,
           ),
-          verticalSpace(18),
+          verticalSpace(10),
           AppTextFormField(
             hintText: 'Password',
             isObscureText: isPasswordObscureText,
@@ -120,19 +73,44 @@ class _SignupFormState extends State<SignupForm> {
               },
               child: Icon(
                 isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
+                size: 20.r,
               ),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter a valid password';
+                return 'field musn\'t be empty';
               }
             },
-            focusNode: passwordFocusNode,
           ),
-          if (showPasswordValidations)
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: PasswordValidations(
+          verticalSpace(10),
+          AppTextFormField(
+            hintText: 'Confirm Password',
+            isObscureText: isPasswordObscureText,
+            controller: context.read<SignupCubit>().confirmPasswordController,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isPasswordObscureText = !isPasswordObscureText;
+                });
+              },
+              child: Icon(
+                isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
+                size: 20.r,
+              ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'field musn\'t be empty';
+              }
+              if (value !=
+                  context.read<SignupCubit>().passwordController.text) {
+                return 'passwords doesn\'t match.';
+              }
+            },
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+            child: PasswordValidations(
                 hasLowerCase: hasLowercase,
                 hasUpperCase: hasUppercase,
                 hasSpecialCharacters: hasSpecialCharacters,
@@ -148,7 +126,6 @@ class _SignupFormState extends State<SignupForm> {
   @override
   void dispose() {
     passwordController.dispose();
-    passwordFocusNode.dispose();
     super.dispose();
   }
 }

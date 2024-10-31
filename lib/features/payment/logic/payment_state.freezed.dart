@@ -73,20 +73,20 @@ mixin _$PaymentState {
 
 /// @nodoc
 abstract class $PaymentStateCopyWith<$Res> {
-  factory $PaymentStateCopyWith(
+factory $PaymentStateCopyWith(
           PaymentState value, $Res Function(PaymentState) then) =
       _$PaymentStateCopyWithImpl<$Res, PaymentState>;
 }
 
 /// @nodoc
 class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
-    implements $PaymentStateCopyWith<$Res> {
+implements $PaymentStateCopyWith<$Res> {
   _$PaymentStateCopyWithImpl(this._value, this._then);
 
 // ignore: unused_field
-  final $Val _value;
+final $Val _value;
 // ignore: unused_field
-  final $Res Function($Val) _then;
+final $Res Function($Val) _then;
 
   /// Create a copy of PaymentState
   /// with the given fields replaced by the non-null parameter values.
@@ -94,14 +94,14 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
 
 /// @nodoc
 abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
+factory _$$InitialImplCopyWith(
           _$InitialImpl value, $Res Function(_$InitialImpl) then) =
       __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PaymentStateCopyWithImpl<$Res, _$InitialImpl>
+extends _$PaymentStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -114,7 +114,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+const _$InitialImpl();
 
   @override
   String toString() {
@@ -206,19 +206,19 @@ class _$InitialImpl implements _Initial {
 }
 
 abstract class _Initial implements PaymentState {
-  const factory _Initial() = _$InitialImpl;
+const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
 abstract class _$$PaymentLoadingImplCopyWith<$Res> {
-  factory _$$PaymentLoadingImplCopyWith(_$PaymentLoadingImpl value,
+factory _$$PaymentLoadingImplCopyWith(_$PaymentLoadingImpl value,
           $Res Function(_$PaymentLoadingImpl) then) =
       __$$PaymentLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PaymentLoadingImplCopyWithImpl<$Res>
-    extends _$PaymentStateCopyWithImpl<$Res, _$PaymentLoadingImpl>
+extends _$PaymentStateCopyWithImpl<$Res, _$PaymentLoadingImpl>
     implements _$$PaymentLoadingImplCopyWith<$Res> {
   __$$PaymentLoadingImplCopyWithImpl(
       _$PaymentLoadingImpl _value, $Res Function(_$PaymentLoadingImpl) _then)
@@ -231,7 +231,7 @@ class __$$PaymentLoadingImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PaymentLoadingImpl implements _PaymentLoading {
-  const _$PaymentLoadingImpl();
+const _$PaymentLoadingImpl();
 
   @override
   String toString() {
@@ -323,19 +323,19 @@ class _$PaymentLoadingImpl implements _PaymentLoading {
 }
 
 abstract class _PaymentLoading implements PaymentState {
-  const factory _PaymentLoading() = _$PaymentLoadingImpl;
+const factory _PaymentLoading() = _$PaymentLoadingImpl;
 }
 
 /// @nodoc
 abstract class _$$PaymentSuccessImplCopyWith<$Res> {
-  factory _$$PaymentSuccessImplCopyWith(_$PaymentSuccessImpl value,
+factory _$$PaymentSuccessImplCopyWith(_$PaymentSuccessImpl value,
           $Res Function(_$PaymentSuccessImpl) then) =
       __$$PaymentSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
 class __$$PaymentSuccessImplCopyWithImpl<$Res>
-    extends _$PaymentStateCopyWithImpl<$Res, _$PaymentSuccessImpl>
+extends _$PaymentStateCopyWithImpl<$Res, _$PaymentSuccessImpl>
     implements _$$PaymentSuccessImplCopyWith<$Res> {
   __$$PaymentSuccessImplCopyWithImpl(
       _$PaymentSuccessImpl _value, $Res Function(_$PaymentSuccessImpl) _then)
@@ -348,7 +348,7 @@ class __$$PaymentSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PaymentSuccessImpl implements _PaymentSuccess {
-  const _$PaymentSuccessImpl();
+const _$PaymentSuccessImpl();
 
   @override
   String toString() {
@@ -440,12 +440,12 @@ class _$PaymentSuccessImpl implements _PaymentSuccess {
 }
 
 abstract class _PaymentSuccess implements PaymentState {
-  const factory _PaymentSuccess() = _$PaymentSuccessImpl;
+const factory _PaymentSuccess() = _$PaymentSuccessImpl;
 }
 
 /// @nodoc
 abstract class _$$PaymentFailureImplCopyWith<$Res> {
-  factory _$$PaymentFailureImplCopyWith(_$PaymentFailureImpl value,
+factory _$$PaymentFailureImplCopyWith(_$PaymentFailureImpl value,
           $Res Function(_$PaymentFailureImpl) then) =
       __$$PaymentFailureImplCopyWithImpl<$Res>;
   @useResult
@@ -454,7 +454,7 @@ abstract class _$$PaymentFailureImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$PaymentFailureImplCopyWithImpl<$Res>
-    extends _$PaymentStateCopyWithImpl<$Res, _$PaymentFailureImpl>
+extends _$PaymentStateCopyWithImpl<$Res, _$PaymentFailureImpl>
     implements _$$PaymentFailureImplCopyWith<$Res> {
   __$$PaymentFailureImplCopyWithImpl(
       _$PaymentFailureImpl _value, $Res Function(_$PaymentFailureImpl) _then)
@@ -479,7 +479,7 @@ class __$$PaymentFailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PaymentFailureImpl implements _PaymentFailure {
-  const _$PaymentFailureImpl(this.errorMessage);
+const _$PaymentFailureImpl(this.errorMessage);
 
   @override
   final String errorMessage;
@@ -586,7 +586,7 @@ class _$PaymentFailureImpl implements _PaymentFailure {
 }
 
 abstract class _PaymentFailure implements PaymentState {
-  const factory _PaymentFailure(final String errorMessage) =
+const factory _PaymentFailure(final String errorMessage) =
       _$PaymentFailureImpl;
 
   String get errorMessage;

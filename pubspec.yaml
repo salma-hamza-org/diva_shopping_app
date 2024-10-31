@@ -65,6 +65,9 @@ dependencies:
   shared_preferences: ^2.2.3
   # provides API to store data in secure storage.
   flutter_secure_storage: ^9.2.2
+  # for firebase service
+  firebase_auth: ^5.3.1
+  firebase_core: ^3.6.0
   # easy way to add shimmer effect.
   shimmer: ^3.0.0
   #A Flutter package to use fonts from fonts.google.com.
@@ -84,6 +87,8 @@ dependencies:
   hive: ^2.2.3
   #Flutter library for Stripe. Supports PaymentSheets, Apple & Google Pay, SCA, PSD2 and much more.
   flutter_stripe: ^11.2.0
+  #A carousel slider widget, support infinite scroll and custom child widget.
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:

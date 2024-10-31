@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "diva-shopping-app",
+          "appId": "1:656374206390:android:ea4b74ddedd1805bfb3b17",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "diva-shopping-app",
+          "configurations": {
+            "android": "1:656374206390:android:ea4b74ddedd1805bfb3b17",
+            "ios": "1:656374206390:ios:69d71321263bee85fb3b17"
+          }
+        }
+      }
+    }
+  }
+}
